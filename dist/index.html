@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#112c2b">
+  <meta name="description" content="Singapur ve Kuala Lumpur için cepten hızlı cümleler, sesli telaffuz ve gezi listeleri.">
+  <title>Asya Cep Rehberi</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="preload" href="./assets/chinatown-evening.webp" as="image">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./phrases.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div id="intro" class="intro" aria-label="Asya Cep Rehberi açılışı">
+    <div class="intro-visual" aria-hidden="true"><div class="intro-scene"><img src="./assets/chinatown-evening.webp" alt=""></div></div>
+    <div class="intro-shade" aria-hidden="true"></div>
+    <div class="intro-top"><span class="wordmark"><span class="seal">旅</span> ASYA CEP REHBERİ</span><span class="intro-edition">SINGAPUR · 2026</span></div>
+    <div class="intro-content">
+      <p class="eyebrow light">YANINDAKİ KÜÇÜK REHBER</p>
+      <h1>Yol seni<br><em>nereye</em> götürürse.</h1>
+      <p class="intro-description">Sokakta gereken cümleler, tek dokunuşla sesli. Kaydettiğin yerler de elinin altında.</p>
+      <button id="enter-app" class="enter-button" type="button">Gezi paneline geç <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="intro-bottom"><span>01 / SINGAPUR</span><span>02 / KUALA LUMPUR</span></div>
+  </div>
+
+  <div id="app" class="app-shell" hidden>
+    <header class="site-header">
+      <button id="logo-home" class="brand" type="button" aria-label="Ana sayfa"><span class="seal">旅</span><span>Asya <b>Cep Rehberi</b></span></button>
+      <button id="city-toggle" class="city-toggle" type="button" aria-label="Şehir değiştir"><span id="city-name">Singapur</span><span class="chevron" aria-hidden="true">⌄</span></button>
+    </header>
+
+    <main id="main-content">
+      <section id="view-home" class="view" aria-labelledby="home-title">
+        <div class="home-hero">
+          <div class="home-hero-image" role="img" aria-label="Akşam ışığında Singapur Chinatown sokakları" id="home-hero-image"></div>
+          <div class="home-hero-overlay"></div>
+          <div class="home-hero-content"><p id="home-edition" class="eyebrow light">GEZİ DEFTERİ / 01</p><h1 id="home-title">Singapur,<br><em>şimdi buradayız.</em></h1><p id="home-subtitle">Bir cümle, bir durak, yeni bir sokak.</p></div>
+        </div>
+        <div class="home-inner">
+          <div class="date-strip"><span>03—08 EKİM <b>Singapur</b></span><span>09—14 EKİM <b>Kuala Lumpur</b></span></div>
+          <section class="home-section" aria-labelledby="quick-home-title">
+            <div class="section-head"><div><p class="eyebrow">HIZLI ERİŞİM</p><h2 id="quick-home-title">Şu an ne lazım?</h2></div></div>
+            <div class="action-grid">
+              <button class="action-tile" type="button" data-go="phrases"><span class="action-symbol" aria-hidden="true">文</span><strong>Hazır cümleler</strong><small>Bul, göster, dinlet</small></button>
+              <button class="action-tile" type="button" data-go="translate"><span class="action-symbol" aria-hidden="true">⇄</span><strong>Canlı çeviri</strong><small>Yaz ve çeviriye geç</small></button>
+              <button class="action-tile" type="button" data-go="lists"><span class="action-symbol" aria-hidden="true">◎</span><strong>Harita listeleri</strong><small>Kaydettiğin yerleri aç</small></button>
+            </div>
+          </section>
+          <section class="home-section" aria-labelledby="say-now-title"><div class="section-head"><div><p class="eyebrow">CEBİNDEKİ CÜMLELER</p><h2 id="say-now-title">Hemen söyle</h2></div><button class="text-link" type="button" data-go="phrases">Tümünü gör</button></div><div id="home-phrases" class="home-phrases"></div></section>
+          <p class="home-note">İpucu: Cümle kartındaki <span aria-hidden="true">▶</span> düğmesine basıp telefonu karşındakine uzatabilirsin.</p>
+        </div>
+      </section>
+
+      <section id="view-phrases" class="view content-view" aria-labelledby="phrases-title" hidden>
+        <div class="view-heading"><p class="eyebrow">KONUŞMA REHBERİ</p><h1 id="phrases-title">Doğru cümle,<br><em>tam zamanında.</em></h1><p>Türkçesini bul, karşılığını göster veya dinlet.</p></div>
+        <div class="toolbar"><label class="search-field"><span aria-hidden="true">⌕</span><input id="phrase-search" type="search" placeholder="Fiyat, yemek, yol..." autocomplete="off" aria-label="Cümle ara"></label><label class="select-field"><span>Dil</span><select id="language-select" aria-label="Çeviri dili"><option value="zh">中文</option><option value="en">English</option><option value="ms">Malay</option></select></label></div>
+        <div id="category-tabs" class="category-tabs" role="group" aria-label="Cümle kategorileri"></div>
+        <div class="list-heading"><span id="result-count"></span><button id="add-phrase-open" class="text-link" type="button">+ Kendi cümleni ekle</button></div>
+        <div id="phrase-list" class="phrase-list" aria-live="polite"></div>
+        <div id="empty-phrases" class="empty-state" hidden><span aria-hidden="true">⌕</span><h2>Cümle bulunamadı</h2><p>Başka bir kelime dene veya kendi cümleni ekle.</p></div>
+      </section>
+
+      <section id="view-lists" class="view content-view" aria-labelledby="lists-title" hidden>
+        <div class="view-heading"><p class="eyebrow">YER DEFTERİ</p><h1 id="lists-title">Şehir senin,<br><em>rota senin.</em></h1><p>Google Maps'te hazırladığın Singapur listelerine buradan dön.</p></div>
+        <div class="list-destination"><span class="destination-index">01 / SINGAPUR</span><h2>Gezilecek yerler</h2><p>Mahalleler, parklar, yürüyüşler ve görmek istediğin duraklar.</p><a href="https://maps.app.goo.gl/VmmeredYVgCWR7sW7" target="_blank" rel="noopener noreferrer" class="map-button">Haritada aç <span aria-hidden="true">↗</span></a></div>
+        <div class="list-destination"><span class="destination-index">02 / SINGAPUR</span><h2>Yeme, içme & alışveriş</h2><p>Hawker merkezleri, kahve molaları ve alışveriş noktaları.</p><a href="https://maps.app.goo.gl/BoTwuS6CSt98rD2K7" target="_blank" rel="noopener noreferrer" class="map-button">Haritada aç <span aria-hidden="true">↗</span></a></div>
+        <p class="muted-note">Listeye yer eklemek ve çıkarmak için Google Maps açılır. Bu sayfa listelerine hızlı erişim sağlar.</p>
+      </section>
+
+      <section id="view-translate" class="view content-view" aria-labelledby="translate-title" hidden>
+        <div class="view-heading"><p class="eyebrow">ANINDA YARDIM</p><h1 id="translate-title">Söylemek istediğini<br><em>yaz.</em></h1><p>Yazdığın cümleyi Google Çeviri'de açıp konuşma modunu kullan.</p></div>
+        <form id="translate-form" class="translate-card"><label for="translate-text">Türkçe cümlen</label><textarea id="translate-text" rows="5" placeholder="Örneğin: Bu otobüs Chinatown'a gider mi?" required></textarea><label for="translate-lang">Hangi dile?</label><select id="translate-lang"><option value="zh-CN">Mandarin Çincesi</option><option value="en">İngilizce</option><option value="ms">Malayca</option></select><button class="primary-button" type="submit">Google Çeviri'de aç <span aria-hidden="true">↗</span></button></form>
+        <div class="translation-tip"><span class="tip-icon" aria-hidden="true">i</span><p id="translation-tip-text">Karşındaki kişi İngilizceyi anlamıyorsa önce Mandarin'i dene. Singapur'da Malayca ve Tamilce de konuşuluyor.</p></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Ana gezinme"><button type="button" data-go="home" aria-label="Ana sayfa"><span aria-hidden="true">⌂</span><small>Ana sayfa</small></button><button type="button" data-go="phrases" aria-label="Cümleler"><span aria-hidden="true">文</span><small>Cümleler</small></button><button type="button" data-go="lists" aria-label="Listeler"><span aria-hidden="true">◎</span><small>Listeler</small></button><button type="button" data-go="translate" aria-label="Çeviri"><span aria-hidden="true">⇄</span><small>Çeviri</small></button></nav>
+  </div>
+
+  <dialog id="phrase-dialog" class="phrase-dialog"><form id="custom-phrase-form" method="dialog"><div class="dialog-head"><div><p class="eyebrow">KENDİ CÜMLEN</p><h2>Cümle ekle</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Kapat">×</button></div><label>Türkçe cümle<input name="tr" required maxlength="160" placeholder="Örneğin: Bilet nereden alınır?"></label><label>Mandarin çevirisi<input name="zh" maxlength="160" placeholder="İstersen yaz"></label><label>İngilizce çevirisi<input name="en" maxlength="160" placeholder="İstersen yaz"></label><label>Malayca çevirisi<input name="ms" maxlength="160" placeholder="İstersen yaz"></label><p>Çevirileri bu cihazda saklanır. Çeviri otomatik yapılmaz.</p><button class="primary-button" type="submit">Cümleyi kaydet</button></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
