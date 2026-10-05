@@ -422,7 +422,7 @@ Singapur'dan Malezya'ya geçiş günü!
   }
 
   // Not Defteri Görünüm / Düzenleme Modu Geçişi
-  function setNoteViewMode(mode) {
+  function setNoteViewMode(mode, shouldFocus = false) {
     currentNoteMode = mode;
     localStorage.setItem(STORAGE_NOTE_VIEW_MODE, mode);
 
@@ -447,7 +447,7 @@ Singapur'dan Malezya'ya geçiş günü!
       btnEdit.setAttribute('aria-selected', isEdit ? 'true' : 'false');
     }
 
-    if (isEdit) {
+    if (isEdit && shouldFocus) {
       $('#plan-day-notes')?.focus();
     }
   }
@@ -892,11 +892,11 @@ Singapur'dan Malezya'ya geçiş günü!
 
     // Notion Görünüm / Düzenleme Butonları
     $('#notion-toggle-preview')?.addEventListener('click', () => setNoteViewMode('preview'));
-    $('#notion-toggle-edit')?.addEventListener('click', () => setNoteViewMode('edit'));
+    $('#notion-toggle-edit')?.addEventListener('click', () => setNoteViewMode('edit', true));
     $('#notion-done-editing-btn')?.addEventListener('click', () => setNoteViewMode('preview'));
 
     // Notion Önizlemesine çift dokunulduğunda düzenleme moduna geç
-    $('#plan-notes-preview')?.addEventListener('dblclick', () => setNoteViewMode('edit'));
+    $('#plan-notes-preview')?.addEventListener('dblclick', () => setNoteViewMode('edit', true));
 
     // Biçimlendirme Araç Çubuğu Butonları
     $$('#notion-editor-toolbar .toolbar-btn[data-fmt]').forEach(btn => {

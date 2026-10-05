@@ -14,7 +14,7 @@
   const persist=()=>{localStorage.setItem('asya-favorites',JSON.stringify(favorites));localStorage.setItem('asya-custom-phrases',JSON.stringify(custom));localStorage.setItem('asya-lang',lang);localStorage.setItem('asya-city',city)};
   const toast=message=>{const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2600)};
   window.TravelAppToast=toast;
-  const changeView=next=>{view=next;$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='phrases')$('#phrase-search').focus({preventScroll:true});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
+  const changeView=next=>{view=next;$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
   window.TravelChangeView=changeView;
   const enter=()=>{$('#intro').hidden=true;$('#app').hidden=false;sessionStorage.setItem('asya-entered','1');changeView('home')};
   $('#enter-app').addEventListener('click',enter);
