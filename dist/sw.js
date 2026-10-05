@@ -1,4 +1,4 @@
-const CACHE='asya-cep-v9';
+const CACHE='asya-cep-v11';
 const CORE=['./','./index.html','./style.css','./app.js','./phrases.js','./pronunciations.js','./places.js','./map.js','./vendor/leaflet.js','./vendor/leaflet.css','./assets/chinatown-evening.webp','./assets/kuala-lumpur-evening.webp','./assets/icon.svg','./manifest.webmanifest','./assets/audio-manifest.json'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(async cache=>{const response=await fetch('./assets/audio-manifest.json');const audio=await response.json();await cache.addAll([...CORE,...audio]);}).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
