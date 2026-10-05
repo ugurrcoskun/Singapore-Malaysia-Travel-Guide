@@ -1044,6 +1044,14 @@ Singapur'dan Malezya'ya geçiş günü!
     });
   }
 
+  function flushSave() {
+    if (notesSaveTimer) {
+      clearTimeout(notesSaveTimer);
+      notesSaveTimer = null;
+      savePlans(plans);
+    }
+  }
+
   window.TravelPlan = {
     init: () => {
       initListeners();
@@ -1051,7 +1059,8 @@ Singapur'dan Malezya'ya geçiş günü!
       renderAll();
     },
     setSelectedDate,
-    renderHomePlanCard
+    renderHomePlanCard,
+    flushSave
   };
 
   if (document.readyState === 'loading') {

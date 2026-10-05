@@ -1,4 +1,4 @@
-const CACHE = 'asya-cep-v13';
+const CACHE = 'asya-cep-v14';
 const CORE = [
   './', './index.html', './style.css', './app.js', './plan.js', './phrases.js',
   './pronunciations.js', './places.js', './map.js',

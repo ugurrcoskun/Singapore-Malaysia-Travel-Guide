@@ -9,18 +9,23 @@
   let favorites=readJSON('asya-favorites',[]);if(!Array.isArray(favorites))favorites=[];
   let lang=localStorage.getItem('asya-lang')||'zh';if(!langMeta[lang])lang='zh';
   let city=localStorage.getItem('asya-city')||'Singapur';
-  let category='Hemen kullan';let view='home';let playingAudio=null;let toastTimer;
+  let category='Hemen kullan';let view;let playingAudio=null;let toastTimer;
   const allPhrases=()=>[...phrases,...custom];
   const persist=()=>{localStorage.setItem('asya-favorites',JSON.stringify(favorites));localStorage.setItem('asya-custom-phrases',JSON.stringify(custom));localStorage.setItem('asya-lang',lang);localStorage.setItem('asya-city',city)};
   const toast=message=>{const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2600)};
   window.TravelAppToast=toast;
-  const changeView=next=>{view=next;$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
+  const validViews=['home','plan','phrases','lists','translate'];
+  const getSavedView=()=>{const hash=window.location.hash.replace('#','');if(validViews.includes(hash))return hash;const saved=localStorage.getItem('asya-active-view');if(validViews.includes(saved))return saved;return'home'};
+  view=getSavedView();
+  const changeView=next=>{if(!validViews.includes(next))next='home';view=next;localStorage.setItem('asya-active-view',next);try{history.replaceState(null,'','#'+next)}catch(e){}$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
   window.TravelChangeView=changeView;
-  const enter=()=>{$('#intro').hidden=true;$('#app').hidden=false;sessionStorage.setItem('asya-entered','1');changeView('home')};
-  $('#enter-app').addEventListener('click',enter);
-  if(sessionStorage.getItem('asya-entered')==='1')enter();
+  const enter=(targetView)=>{$('#intro').hidden=true;$('#app').hidden=false;localStorage.setItem('asya-entered','1');changeView(targetView||getSavedView())};
+  $('#enter-app').addEventListener('click',()=>enter('home'));
+  if(localStorage.getItem('asya-entered')==='1'){enter(getSavedView());}
   $('#logo-home').addEventListener('click',()=>changeView('home'));
   document.addEventListener('click',e=>{const btn=e.target.closest('[data-go]');if(btn&&btn.dataset.go)changeView(btn.dataset.go)});
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){localStorage.setItem('asya-active-view',view);window.TravelPlan?.flushSave?.();}});
+  window.addEventListener('pagehide',()=>{localStorage.setItem('asya-active-view',view);window.TravelPlan?.flushSave?.();});
   function updateCity(){const kl=city==='Kuala Lumpur';$('#city-name').textContent=city;$('#language-select').value=lang;$('#translate-lang').value=lang==='zh'?'zh-CN':lang;$('#home-hero-image').classList.toggle('kl',kl);$('#home-hero-image').setAttribute('aria-label',kl?'Akşam ışığında Kuala Lumpur Chinatown sokakları':'Akşam ışığında Singapur Chinatown sokakları');$('#home-edition').textContent=kl?'09—14 EKİM / KUALA LUMPUR':'03—08 EKİM / SİNGAPUR';$('#home-title').textContent=city;$('#home-subtitle').textContent=kl?'Hazır cümleler ve çeviri.':'Harita, hazır cümleler ve çeviri.';$('#translation-tip-text').textContent=kl?'Kuala Lumpur’da Malayca ve İngilizce yaygın. Çince konuşan biriyle Mandarin’i de seçebilirsin.':"Karşındaki kişi İngilizceyi anlamıyorsa önce Mandarin'i dene. Singapur'da Malayca ve Tamilce de konuşuluyor."}
   $('#city-toggle').addEventListener('click',()=>{city=city==='Singapur'?'Kuala Lumpur':'Singapur';lang=city==='Singapur'?'zh':'ms';updateCity();persist();renderAll();toast(`${city} seçildi`)});
   updateCity();
