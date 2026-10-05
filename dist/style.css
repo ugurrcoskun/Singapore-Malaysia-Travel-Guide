@@ -101,6 +101,9 @@ h1, h2, h3, h4, p { margin-top: 0; }
 /* ==========================================================================
    GİRİŞ / AÇILIŞ PERDESİ (INTRO COVER)
    ========================================================================== */
+html.has-entered #intro { display: none !important; }
+html.has-entered #app { display: block !important; }
+
 .intro {
   position: fixed;
   inset: 0;

@@ -17,13 +17,88 @@
   const validViews=['home','plan','phrases','lists','translate'];
   const getSavedView=()=>{const hash=window.location.hash.replace('#','');if(validViews.includes(hash))return hash;const saved=localStorage.getItem('asya-active-view');if(validViews.includes(saved))return saved;return'home'};
   view=getSavedView();
-  const changeView=next=>{if(!validViews.includes(next))next='home';view=next;localStorage.setItem('asya-active-view',next);try{history.replaceState(null,'','#'+next)}catch(e){}$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
+
+  function closeOpenModals(){
+    let closed=false;
+    $$('dialog[open]').forEach(d=>{d.close();closed=true});
+    const calPop=$('#plan-cal-popover');
+    if(calPop&&!calPop.hidden){calPop.hidden=true;closed=true}
+    return closed;
+  }
+
+  const scrollPositions={};
+
+  const changeView=(next,push=true)=>{
+    if(!validViews.includes(next))next='home';
+    const prevView=view;
+    if(prevView){
+      scrollPositions[prevView]=window.scrollY||window.pageYOffset||0;
+    }
+    view=next;
+    localStorage.setItem('asya-active-view',next);
+    if(push&&prevView!==next){
+      try{history.pushState({view:next},'','#'+next)}catch(e){}
+    }else{
+      try{history.replaceState({view:next},'','#'+next)}catch(e){}
+    }
+    $$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);
+    $$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));
+    $$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));
+    if(push){
+      window.scrollTo({top:0,behavior:'instant'});
+    }else{
+      const targetY=scrollPositions[next]||0;
+      requestAnimationFrame(()=>window.scrollTo({top:targetY,behavior:'instant'}));
+    }
+    if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());
+    if(next==='home')window.TravelPlan?.renderHomePlanCard?.();
+  };
   window.TravelChangeView=changeView;
-  const enter=(targetView)=>{$('#intro').hidden=true;$('#app').hidden=false;localStorage.setItem('asya-entered','1');changeView(targetView||getSavedView())};
+
+  const enter=(targetView)=>{
+    document.documentElement.classList.add('has-entered');
+    $('#intro').hidden=true;
+    $('#app').hidden=false;
+    localStorage.setItem('asya-entered','1');
+    const dest=targetView||getSavedView();
+    try{history.replaceState({view:dest},'','#'+dest)}catch(e){}
+    changeView(dest,false);
+  };
   $('#enter-app').addEventListener('click',()=>enter('home'));
-  if(localStorage.getItem('asya-entered')==='1'){enter(getSavedView());}
+  if(localStorage.getItem('asya-entered')==='1'){
+    document.documentElement.classList.add('has-entered');
+    const initView=getSavedView();
+    $('#intro').hidden=true;
+    $('#app').hidden=false;
+    if(initView!=='home'){
+      try{
+        history.replaceState({view:'home'},'','#home');
+        history.pushState({view:initView},'','#'+initView);
+      }catch(e){}
+    }else{
+      try{history.replaceState({view:'home'},'','#home')}catch(e){}
+    }
+    changeView(initView,false);
+  }
   $('#logo-home').addEventListener('click',()=>changeView('home'));
   document.addEventListener('click',e=>{const btn=e.target.closest('[data-go]');if(btn&&btn.dataset.go)changeView(btn.dataset.go)});
+
+  // Mobil Geri Tuşu & Swipe Back (PopState) Yönetimi
+  window.addEventListener('popstate',e=>{
+    // 1. Eğer açık bir popup veya dialog varsa önce onu kapat
+    if(closeOpenModals()){
+      try{history.pushState({view},'','#'+view)}catch(err){}
+      return;
+    }
+    // 2. Bir önceki sekmeye geç
+    const hash=window.location.hash.replace('#','');
+    const target=validViews.includes(hash)?hash:(e.state?.view||'home');
+    document.documentElement.classList.add('has-entered');
+    $('#intro').hidden=true;
+    $('#app').hidden=false;
+    changeView(target,false);
+  });
+
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){localStorage.setItem('asya-active-view',view);window.TravelPlan?.flushSave?.();}});
   window.addEventListener('pagehide',()=>{localStorage.setItem('asya-active-view',view);window.TravelPlan?.flushSave?.();});
   function updateCity(){const kl=city==='Kuala Lumpur';$('#city-name').textContent=city;$('#language-select').value=lang;$('#translate-lang').value=lang==='zh'?'zh-CN':lang;$('#home-hero-image').classList.toggle('kl',kl);$('#home-hero-image').setAttribute('aria-label',kl?'Akşam ışığında Kuala Lumpur Chinatown sokakları':'Akşam ışığında Singapur Chinatown sokakları');$('#home-edition').textContent=kl?'09—14 EKİM / KUALA LUMPUR':'03—08 EKİM / SİNGAPUR';$('#home-title').textContent=city;$('#home-subtitle').textContent=kl?'Hazır cümleler ve çeviri.':'Harita, hazır cümleler ve çeviri.';$('#translation-tip-text').textContent=kl?'Kuala Lumpur’da Malayca ve İngilizce yaygın. Çince konuşan biriyle Mandarin’i de seçebilirsin.':"Karşındaki kişi İngilizceyi anlamıyorsa önce Mandarin'i dene. Singapur'da Malayca ve Tamilce de konuşuluyor."}

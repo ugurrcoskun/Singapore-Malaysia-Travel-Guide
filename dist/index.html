@@ -15,9 +15,18 @@
   <script src="./pronunciations.js" defer></script>
   <script src="./vendor/leaflet.js" defer></script>
   <script src="./places.js" defer></script>
-  <script src="./app.js" defer></script>
   <script src="./map.js" defer></script>
   <script src="./plan.js" defer></script>
+  <script src="./app.js" defer></script>
+  <script>
+    (function(){
+      try {
+        if (localStorage.getItem('asya-entered') === '1') {
+          document.documentElement.classList.add('has-entered');
+        }
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body>
   <div id="intro" class="intro" aria-label="Asya Cep Rehberi açılışı">
