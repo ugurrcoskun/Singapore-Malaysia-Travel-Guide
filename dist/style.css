@@ -1,239 +1,1772 @@
-:root{--ink:#17302e;--deep:#102724;--red:#a83229;--red-dark:#8e261f;--paper:#f1efea;--cream:#faf9f6;--muted:#66716d;--line:#d5d1c9;--accent:#a84d3e;--shadow:0 14px 42px rgba(29,36,28,.09);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--paper)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}a{color:inherit}h1,h2,h3,p{margin-top:0}[hidden]{display:none!important}em{font-style:normal;color:var(--accent)}.eyebrow{margin:0 0 11px;font-size:.73rem;line-height:1.4;letter-spacing:.2em;font-weight:800;color:var(--red)}.eyebrow.light{color:#f5f3ed}.seal{display:inline-grid;place-items:center;width:31px;height:35px;background:var(--red);border:1px solid #d39283;color:#fff;font:700 1.15rem Georgia,serif;line-height:1;box-shadow:inset 0 0 0 2px rgba(255,255,255,.24)}
-.intro{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;isolation:isolate;background:#0e2627;color:#fff9ec;overflow:hidden}.intro-visual{position:absolute;inset:0;z-index:-2;perspective:1100px;overflow:hidden}.intro-scene{height:100%;width:100%;transform:scale(1.13) rotateY(-4deg);animation:scene-arrive 1.6s cubic-bezier(.17,.67,.2,1) both,scene-breathe 18s ease-in-out 1.6s infinite alternate;transform-origin:60% 62%;will-change:transform}.intro-scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}.intro-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,28,29,.84) 0%,rgba(10,30,30,.46) 53%,rgba(10,30,30,.16) 100%),linear-gradient(0deg,rgba(6,25,27,.67),transparent 48%)}.intro-top,.intro-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:25px clamp(22px,5vw,72px)}.intro-top{animation:fade-up .9s .45s both}.wordmark{display:inline-flex;align-items:center;gap:11px;font-size:.71rem;font-weight:800;letter-spacing:.19em;white-space:nowrap}.intro-edition,.intro-bottom{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:#e9ddc8}.intro-content{width:min(780px,100%);margin:auto 0 auto clamp(22px,9vw,145px);padding:50px 20px 70px 0;animation:fade-up 1s .6s both}.intro-content h1{margin:0 0 26px;font:normal clamp(3.5rem,8vw,8.4rem)/.94 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}.intro-content h1 em{font-style:italic}.intro-description{max-width:370px;font-size:1rem;line-height:1.65;color:#fff1de}.enter-button{margin-top:23px;display:inline-flex;align-items:center;justify-content:space-between;gap:38px;background:var(--red);border:1px solid #d4795c;color:#fff7e9;padding:16px 21px;min-width:235px;min-height:56px;font-weight:800;box-shadow:0 12px 32px rgba(29,12,9,.25);transition:transform .2s,background .2s}.enter-button:hover{transform:translateY(-3px);background:#ba3e32}.enter-button span{font-size:1.3rem;font-weight:400}.intro-bottom{border-top:1px solid rgba(255,255,255,.22)}@keyframes scene-arrive{from{opacity:.4;transform:scale(1.25) rotateY(-9deg) translateX(20px)}to{opacity:1;transform:scale(1.13) rotateY(-4deg)}}@keyframes scene-breathe{to{transform:scale(1.2) rotateY(2deg) translateX(-1%)}}@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.app-shell{min-height:100vh;padding-bottom:72px}.site-header{height:70px;padding:0 clamp(18px,4vw,72px);display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:var(--cream);position:sticky;top:0;z-index:5}.brand{display:inline-flex;align-items:center;gap:10px;border:0;background:none;padding:0;color:var(--deep);font:normal 1.1rem Georgia,serif;white-space:nowrap}.brand b{font-weight:normal;color:var(--red)}.city-toggle{border:1px solid var(--line);background:transparent;color:var(--deep);display:inline-flex;align-items:center;gap:13px;padding:9px 13px;font-size:.82rem;font-weight:750;min-height:42px}.chevron{font-size:1.2rem;line-height:0}.view{min-height:calc(100vh - 142px)}.home-hero{height:clamp(340px,44vw,510px);position:relative;color:#fff7e7;overflow:hidden}.home-hero-image{position:absolute;inset:0;background-image:url('./assets/chinatown-evening.webp');background-size:cover;background-position:center 61%;transform:scale(1.02)}.home-hero-image.kl{background-image:url('./assets/kuala-lumpur-evening.webp');background-position:center 55%}.home-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,36,35,.83),rgba(14,32,31,.33) 70%),linear-gradient(0deg,rgba(7,29,28,.45),transparent 65%)}.home-hero-content{position:relative;max-width:1180px;margin:auto;padding:clamp(72px,10vw,130px) 28px 30px}.home-hero h1,.view-heading h1{font:normal clamp(3rem,5.8vw,5.9rem)/.99 Georgia,serif;letter-spacing:-.055em;margin:0 0 19px}.home-hero p:last-child{font-size:1rem;color:#f9e9d4}.home-inner{max-width:1180px;margin:auto;padding:0 28px 70px}.date-strip{display:flex;gap:25px;border-bottom:1px solid var(--line);padding:19px 0;color:#67706a;font-size:.72rem;font-weight:750;letter-spacing:.11em}.date-strip span{display:inline-flex;gap:9px}.date-strip b{color:var(--red);font-weight:800}.home-section{margin-top:48px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}.section-head h2,.list-destination h2{font:normal clamp(1.8rem,3vw,2.4rem)/1.08 Georgia,serif;letter-spacing:-.04em;margin:0}.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.action-tile{min-height:165px;text-align:left;border:1px solid #d9d0c0;background:var(--cream);color:var(--ink);padding:23px;display:flex;align-items:flex-start;flex-direction:column;box-shadow:0 4px 0 rgba(63,53,39,.035);transition:transform .2s,box-shadow .2s,border-color .2s}.action-tile:hover{transform:translateY(-3px);border-color:var(--red);box-shadow:var(--shadow)}.action-symbol{font:normal 2rem Georgia,serif;color:var(--red);margin-bottom:auto}.action-tile strong{font:normal 1.32rem Georgia,serif;margin:17px 0 4px}.action-tile small{font-size:.83rem;color:var(--muted)}.text-link{border:0;border-bottom:1px solid var(--red);padding:2px 0 5px;background:none;color:var(--red);font-size:.86rem;font-weight:800;white-space:nowrap}.home-phrases{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.home-note{margin:25px 0 0;color:var(--muted);font-size:.86rem;line-height:1.5}.home-note span{color:var(--red)}
-.content-view{max-width:900px;margin:0 auto;padding:50px 26px 96px}.view-heading{margin-bottom:36px}.view-heading h1{color:var(--deep);font-size:clamp(2.8rem,6vw,4.9rem)}.view-heading h1 em{color:var(--red);font-style:italic}.view-heading>p:last-child{color:var(--muted);line-height:1.5;font-size:1rem}.toolbar{display:flex;gap:10px}.search-field,.select-field{height:54px;border:1px solid var(--line);background:var(--cream);display:flex;align-items:center}.search-field{flex:1;min-width:0;padding:0 16px;gap:12px}.search-field span{font-size:1.8rem;color:var(--red);line-height:1}.search-field input{min-width:0;width:100%;border:0;background:transparent;outline:none;color:var(--ink)}.search-field input::placeholder{color:#8b8f89}.select-field{gap:5px;padding:0 10px 0 14px;color:var(--muted);font-size:.82rem}.select-field select{border:0;background:none;color:var(--ink);font-weight:750;outline:none;max-width:120px}.category-tabs{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:22px 0}.category-tabs::-webkit-scrollbar{display:none}.category-tabs button{white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 14px;min-height:39px;font-size:.85rem}.category-tabs button.active{background:var(--deep);color:#fff7e8;border-color:var(--deep)}.list-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0 16px;font-size:.82rem;color:var(--muted)}.phrase-list{display:grid;gap:10px}.phrase-card{background:var(--cream);border:1px solid var(--line);padding:20px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;box-shadow:0 3px 0 rgba(63,53,39,.028)}.phrase-category{font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--red)}.phrase-card h3{font:normal 1.35rem/1.28 Georgia,serif;margin:8px 0 10px}.phrase-translation{font-size:1.12rem;font-weight:700;line-height:1.4;color:var(--deep);margin:0 0 5px;overflow-wrap:anywhere}.phrase-pronunciation{font-size:.85rem;color:var(--muted);margin:0}.phrase-tools{display:flex;align-items:start;gap:7px}.tool-button{width:42px;height:42px;display:grid;place-items:center;background:transparent;border:1px solid var(--line);color:var(--red);font-size:1.05rem;flex:none}.tool-button.play{background:var(--red);border-color:var(--red);color:white}.tool-button.saved{background:#f0dfdb;color:var(--red-dark);border-color:#d6b4ab}.tool-button:disabled{opacity:.35;cursor:not-allowed}.empty-state{text-align:center;padding:45px 15px;color:var(--muted)}.empty-state span{font-size:2.5rem;color:var(--red)}.empty-state h2{font:normal 1.6rem Georgia,serif;color:var(--deep);margin-bottom:8px}.home-phrases .phrase-card{display:flex;flex-direction:column;justify-content:space-between;min-height:174px}.home-phrases .phrase-card h3{font-size:1.19rem}.home-phrases .phrase-tools{align-self:flex-end}
-.list-destination{background:var(--cream);border:1px solid var(--line);padding:27px;margin-bottom:13px;position:relative}.list-destination:before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--red)}.destination-index{display:block;margin-bottom:20px;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.16em}.list-destination p{color:var(--muted);line-height:1.5;max-width:480px;margin:14px 0 23px}.map-button,.primary-button{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;padding:13px 17px;min-height:49px;border:1px solid var(--red);background:var(--red);color:#fff8e8;text-decoration:none;font-weight:800;font-size:.88rem}.map-button:hover,.primary-button:hover{background:var(--red-dark)}.muted-note{font-size:.88rem;line-height:1.6;color:var(--muted);margin-top:22px}.translate-card{background:var(--cream);border:1px solid var(--line);padding:24px;display:grid;gap:12px}.translate-card label,.phrase-dialog label{display:block;font-size:.83rem;font-weight:800;color:var(--deep)}.translate-card textarea,.translate-card select,.phrase-dialog input{width:100%;border:1px solid var(--line);background:#fffef9;color:var(--ink);padding:13px;min-height:47px;border-radius:0}.translate-card textarea{min-height:135px;resize:vertical}.translate-card .primary-button{justify-content:space-between;margin-top:9px}.translation-tip{display:flex;gap:12px;margin-top:19px;color:var(--muted);font-size:.85rem;line-height:1.55}.translation-tip p{margin:0}.tip-icon{width:20px;height:20px;flex:none;display:grid;place-items:center;border:1px solid var(--red);border-radius:50%;color:var(--red);font-family:Georgia,serif;font-style:italic}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:70px;padding-bottom:env(safe-area-inset-bottom);background:var(--cream);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:6}.bottom-nav button{min-width:120px;max-width:210px;flex:1;background:none;border:0;color:#66716a;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;padding:6px 2px}.bottom-nav button.active{color:var(--red);border-top:2px solid var(--red)}.bottom-nav button span{font:normal 1.35rem Georgia,serif;line-height:1.2}.bottom-nav button small{font-size:.72rem;font-weight:800}.phrase-dialog{width:min(92vw,500px);max-height:90vh;border:1px solid var(--line);background:var(--cream);color:var(--ink);padding:0;box-shadow:0 30px 90px rgba(0,0,0,.28)}.phrase-dialog::backdrop{background:rgba(8,26,26,.67)}.phrase-dialog form{padding:25px;display:grid;gap:15px;overflow:auto}.dialog-head{display:flex;justify-content:space-between;align-items:start}.dialog-head h2{font:normal 2rem Georgia,serif;margin:0}.icon-button{border:0;background:transparent;color:var(--red);font-size:1.8rem}.phrase-dialog input{margin-top:7px}.phrase-dialog form>p{font-size:.8rem;color:var(--muted);margin:0}.toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,15px);background:var(--deep);color:white;padding:12px 17px;font-size:.85rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:90vw;text-align:center}.toast.visible{opacity:1;transform:translate(-50%,0)}
-@media(max-width:700px){.intro-top,.intro-bottom{padding:19px 21px}.intro-edition{display:none}.intro-content{margin:auto 21px 72px;padding:0;max-width:520px}.intro-content h1{font-size:clamp(3.5rem,15vw,5.6rem)}.intro-description{max-width:320px}.intro-shade{background:linear-gradient(0deg,rgba(4,25,26,.91) 0%,rgba(5,26,26,.72) 43%,rgba(5,28,28,.1) 100%)}.intro-scene img{object-position:57% center}.site-header{height:60px;padding:0 17px}.brand{font-size:1rem}.city-toggle{font-size:.75rem;padding:7px 9px;min-height:38px}.home-hero{height:350px}.home-hero-content{padding:85px 22px 20px}.home-hero h1{font-size:3.4rem}.home-inner{padding:0 18px 60px}.date-strip{justify-content:space-between;gap:7px;font-size:.65rem}.date-strip span{display:block}.date-strip b{display:block;margin-top:3px}.home-section{margin-top:36px}.action-grid{grid-template-columns:1fr;gap:9px}.action-tile{min-height:100px;padding:17px;display:grid;grid-template-columns:43px 1fr;grid-template-rows:auto auto;column-gap:10px}.action-symbol{grid-row:1/3;margin:0;font-size:1.8rem}.action-tile strong{margin:0;font-size:1.2rem}.action-tile small{font-size:.83rem}.home-phrases{grid-template-columns:1fr}.home-phrases .phrase-card{min-height:0;display:grid}.content-view{padding:38px 18px 95px}.view-heading{margin-bottom:27px}.view-heading h1{font-size:clamp(2.75rem,10vw,3.8rem)}.toolbar{gap:6px}.search-field{padding:0 10px}.select-field{padding:0 7px}.select-field span{display:none}.select-field select{max-width:88px;font-size:.83rem}.phrase-card{padding:17px;gap:8px}.phrase-card h3{font-size:1.22rem}.phrase-tools{flex-direction:column;align-items:end}.tool-button{width:38px;height:38px}.bottom-nav{height:calc(62px + env(safe-area-inset-bottom))}.bottom-nav button{min-width:0}.bottom-nav button small{font-size:.64rem}.app-shell{padding-bottom:calc(62px + env(safe-area-inset-bottom))}}@media(max-width:380px){.brand{font-size:.88rem}.brand .seal{width:28px;height:31px}.phrase-card{grid-template-columns:minmax(0,1fr) 38px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.intro-scene{transform:none!important}}
+/* ==========================================================================
+   ASYA CEP REHBERİ - GELENEKSEL ASYA LÜKS EDİTORYAL TASARIM
+   İlham: Tayvan Eslite (誠品) Festival & Lake Koleksiyonu
+   Derin Bordo Lake, Akik Kırmızısı, Altın Yaldız ve Fildişi Parşömen
+   ========================================================================== */
 
-.view-heading.compact{margin-bottom:24px}.view-heading.compact h1{font-size:clamp(2.2rem,4vw,3rem);margin-bottom:9px}.view-heading.compact>p:last-child{max-width:560px;font-size:.9rem}.phrase-pronunciation{color:var(--deep);font-weight:650}.phrase-pronunciation b{color:var(--red);font-size:.78rem}.phrase-pinyin{font-size:.75rem;line-height:1.4;color:var(--muted);margin:5px 0 0}.provider-note{font-size:.78rem!important;font-weight:400!important;color:var(--muted)!important;line-height:1.5;margin:1px 0 0}.provider-note a{text-decoration:underline;text-underline-offset:2px}.translation-result{margin-top:15px;border:1px solid var(--line);background:var(--cream);padding:22px}.translation-result #translated-text{font-size:1.35rem;line-height:1.55;color:var(--deep);font-weight:700;margin:14px 0 21px;overflow-wrap:anywhere}.translation-actions{display:flex;gap:9px;flex-wrap:wrap}.secondary-button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:12px 18px;font-weight:800;min-height:49px}.translation-error{color:var(--red-dark);background:#f9ebe6;border:1px solid #eac9c0;padding:14px;line-height:1.5;font-size:.88rem;margin:13px 0}.google-fallback{display:inline-block;margin:17px 0 0}.translate-card .primary-button:disabled{opacity:.6;cursor:wait}
+:root {
+  /* Renk Paleti (Geleneksel Çin / Asya Lake & Altın Koleksiyonu) */
+  --bg-deep: #1c0305;            /* En derin maun / lake zemin */
+  --bg-lake: #2b0609;            /* Zengin bordo lake zemin */
+  --bg-card: #380a0f;            /* Kart ve panel arka planı */
+  --bg-card-light: #460e14;      /* Açık kart / hover zemini */
+  --bg-parchment: #250508;       /* Defter & textarea arka planı */
+  
+  --red-crimson: #8f121a;        /* Asil yakut kırmızısı */
+  --red-cinnabar: #b81b24;       /* Parlak mühür kırmızısı */
+  --red-dark: #660c12;           /* Koyu şarap tonu */
 
-.map-view{max-width:1100px}.map-section{background:var(--cream);border:1px solid var(--line);padding:18px;margin-bottom:22px}.map-status{display:flex;align-items:center;gap:17px;margin-bottom:15px;color:var(--deep);font-weight:800;font-size:.9rem}.progress-track{height:6px;background:#e7e1d4;flex:1;overflow:hidden}.progress-track span{display:block;width:0;height:100%;background:var(--red);transition:width .3s}.map-filters{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;margin-bottom:13px}.map-filters button{white-space:nowrap;background:transparent;border:1px solid var(--line);color:var(--ink);padding:9px 13px;font-size:.83rem;min-height:39px}.map-filters button.active{background:var(--deep);border-color:var(--deep);color:white}#travel-map{height:410px;background:#ebe7da;z-index:1}.map-legend{display:flex;gap:20px;align-items:center;margin:12px 0 19px;color:var(--muted);font-size:.78rem}.map-legend span{display:inline-flex;align-items:center;gap:6px}.map-legend i{width:11px;height:11px;border-radius:50%;display:inline-block}.pin-unvisited{background:var(--red)}.pin-visited{background:#2f685e}.pin-hotel{background:#315f77}.map-list-tools{display:flex;gap:8px}.map-list-tools .search-field{height:47px}.map-list-tools select{border:1px solid var(--line);background:#fffef9;color:var(--ink);padding:0 10px;font-size:.8rem;max-width:140px}.map-place-count{margin:18px 0 10px;color:var(--muted);font-size:.82rem}.map-place-list{max-height:460px;overflow-y:auto;border-top:1px solid var(--line)}.place-row{display:grid;grid-template-columns:10px minmax(0,1fr) auto;align-items:center;gap:11px;padding:14px 4px;border-bottom:1px solid var(--line)}.place-dot{width:9px;height:9px;border-radius:50%;background:var(--red)}.place-row.visited .place-dot{background:#2f685e}.place-row.hotel .place-dot{background:#315f77}.place-name{border:0;background:none;text-align:left;padding:0;color:var(--deep);font-weight:750;line-height:1.35}.place-name:hover{text-decoration:underline}.place-meta{font-size:.72rem;color:var(--muted);margin-top:4px}.place-meta .paid{color:var(--red-dark)}.visit-toggle{border:1px solid var(--line);background:transparent;color:var(--red);padding:8px 10px;min-height:37px;white-space:nowrap;font-size:.78rem;font-weight:800}.place-row.visited .visit-toggle{background:#e4f0e9;color:#286054;border-color:#bfd8cb}.map-popup{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-width:170px}.map-popup strong{display:block;font-size:.95rem;color:var(--deep);margin-bottom:5px}.map-popup small{display:block;color:var(--muted);margin-bottom:10px}.map-popup button{border:0;background:var(--red);color:white;padding:8px 10px;font-weight:750;margin:0 7px 7px 0}.map-popup button.visited{background:#2f685e}.map-popup a{display:inline-block;color:var(--red);font-weight:750;text-decoration:underline;text-underline-offset:2px}.leaflet-control-attribution{font-size:10px!important}.leaflet-popup-content{margin:13px!important}.leaflet-popup-content-wrapper{border-radius:2px!important}.leaflet-container{font:inherit}
-@media(max-width:700px){.map-section{padding:11px}.map-status{display:block}.progress-track{margin-top:8px}.map-filters{margin-top:13px}#travel-map{height:335px}.map-legend{gap:10px;font-size:.7rem}.map-list-tools select{max-width:119px}.place-row{gap:7px}.visit-toggle{font-size:.73rem;padding:7px}}
+  --gold: #d4af37;               /* Klasik altın yaldız */
+  --gold-bright: #f6e3a1;        /* Parlak yaldız vurgu */
+  --gold-brass: #b89330;         /* Antik pirinç / altın çerçeve */
+  --gold-dim: #7d6122;           /* Kısık altın kenarlıklar */
+  --gold-glow: 0 0 16px rgba(212, 175, 55, 0.28);
 
-/* Restrained travel cover: names and dates take priority over slogans. */
-.intro{background:#101f20;color:#f7f5ef}
-.intro-shade{background:linear-gradient(90deg,rgba(5,17,19,.88) 0%,rgba(7,20,21,.60) 52%,rgba(8,22,23,.22) 100%),linear-gradient(0deg,rgba(4,16,17,.52),transparent 52%)}
-.intro-content{width:min(700px,100%);padding-bottom:48px}
-.intro-content h1{margin:0;color:#f7f5ef;font:normal clamp(3.7rem,7vw,7rem)/.97 Georgia,serif;letter-spacing:-.06em;text-wrap:initial}
-.intro-content h1 span{display:block;margin-top:8px;font-size:.76em;letter-spacing:-.055em}
-.intro-route{display:flex;flex-wrap:wrap;gap:10px 27px;width:max-content;max-width:100%;margin-top:33px;padding-top:18px;border-top:1px solid rgba(247,245,239,.55);font-size:.7rem;font-weight:800;letter-spacing:.105em;color:#f0eeea}
-.intro-route span{white-space:nowrap}
-.enter-button{min-width:208px;margin-top:35px;background:#a83229;border-color:#a83229;color:#fff;padding:15px 19px;box-shadow:none}
-.enter-button:hover{background:#8e261f}
-.intro-edition{color:#f1efea}
-.home-hero-overlay{background:linear-gradient(90deg,rgba(5,22,23,.84),rgba(8,26,27,.23) 75%),linear-gradient(0deg,rgba(7,23,24,.38),transparent 65%)}
-.hero-meta{margin:0 0 16px;font-size:.73rem;font-weight:800;letter-spacing:.16em;color:#f4f2ec}
-.home-hero h1{font-size:clamp(3.3rem,6vw,6rem);color:#f7f5ef}
-.home-hero p:last-child{color:#f4f2ec}
-@media(max-width:700px){.intro-shade{background:linear-gradient(0deg,rgba(4,17,19,.92) 0%,rgba(5,19,20,.78) 45%,rgba(5,19,20,.19) 100%)}.intro-content{margin:auto 21px 74px;padding:0}.intro-content h1{font-size:clamp(3.55rem,14vw,5rem)}.intro-content h1 span{font-size:.69em}.intro-route{display:grid;gap:8px;margin-top:24px;padding-top:14px;font-size:.66rem}.enter-button{margin-top:28px}.home-hero h1{font-size:3.6rem}}
-
-/* --- SEYAHAT AJANDASI & GÜNLÜK PLAN STİLLERİ --- */
-.action-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))!important}
-@media(max-width:700px){.action-grid{grid-template-columns:1fr 1fr!important;gap:9px}}
-@media(max-width:440px){.action-grid{grid-template-columns:1fr!important}}
-
-.bottom-nav button{min-width:0!important;max-width:110px!important}
-.bottom-nav button small{font-size:.68rem!important;letter-spacing:-.01em}
-
-/* Ana Sayfa Plan Özeti */
-.home-plan-box{background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--red);padding:24px;box-shadow:0 3px 0 rgba(63,53,39,.03)}
-.home-plan-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
-.home-plan-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.14em;color:var(--red);margin-bottom:6px}
-.home-plan-title{font:normal clamp(1.4rem,2.8vw,1.8rem)/1.15 Georgia,serif;color:var(--deep);margin:0 0 4px}
-.home-plan-meta{font-size:.84rem;color:var(--muted);margin:0;font-weight:600}
-.primary-button.small{padding:9px 15px;min-height:38px;font-size:.82rem;gap:12px}
-.home-plan-notes-preview{background:#fffef9;border:1px dashed #d5cfc1;padding:14px 17px;margin-bottom:16px;border-radius:2px}
-.home-plan-notes-preview .preview-label{display:block;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
-.home-plan-notes-preview p{font-size:.9rem;line-height:1.55;color:var(--ink);margin:0;font-style:italic}
-.home-plan-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-.home-plan-list li{display:flex;align-items:center;gap:11px;font-size:.92rem;color:var(--ink);background:var(--paper);padding:10px 14px;border:1px solid #e5e0d5}
-.home-plan-list li.done{opacity:.55;text-decoration:line-through}
-.home-plan-check{color:var(--red);font-weight:bold;font-size:1.05rem;line-height:1}
-.home-plan-more{font-size:.8rem;color:var(--muted);background:none!important;border:none!important;padding:4px 0!important;font-weight:700}
-.home-plan-empty{color:var(--muted);font-size:.88rem;margin:0;line-height:1.5}
-
-/* Günlük Plan Sayfası */
-.plan-view{max-width:920px}
-.plan-calendar-card{background:var(--cream);border:1px solid var(--line);padding:18px 20px;margin-bottom:20px;box-shadow:0 3px 0 rgba(63,53,39,.028);position:relative}
-.plan-calendar-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.plan-date-nav{display:flex;align-items:center;gap:6px}
-.icon-nav-btn{width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1px solid var(--line);color:var(--deep);font-size:1.3rem;line-height:1;transition:background .2s}
-.icon-nav-btn:hover{background:#e7e2d6}
-.today-tag-btn{height:36px;padding:0 14px;border:1px solid var(--line);background:var(--paper);color:var(--deep);font-size:.8rem;font-weight:750;letter-spacing:.05em}
-.today-tag-btn:hover{background:#e7e2d6}
-.plan-cal-actions{display:flex;gap:7px}
-.plan-tool-btn{height:36px;padding:0 12px;border:1px solid var(--line);background:var(--paper);color:var(--deep);font-size:.8rem;font-weight:750;display:inline-flex;align-items:center;gap:6px}
-.plan-tool-btn:hover{border-color:var(--red);color:var(--red)}
-
-/* Açılır Mini Takvim Popover */
-.plan-cal-popover{position:absolute;top:66px;right:20px;z-index:25;width:290px;background:var(--cream);border:2px solid var(--deep);padding:16px;box-shadow:0 18px 50px rgba(0,0,0,.2)}
-.plan-cal-popover-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.plan-cal-popover-head strong{font:normal 1.05rem Georgia,serif;color:var(--deep)}
-.plan-cal-popover-head .icon-btn{width:28px;height:28px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;font-size:1.1rem;line-height:1}
-.plan-cal-popover-head .close-x{border:none;background:none;color:var(--red);font-size:1.3rem}
-.plan-cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:.7rem;font-weight:800;color:var(--muted);margin-bottom:6px}
-.plan-cal-days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-.cal-day{aspect-ratio:1;border:1px solid transparent;background:transparent;font-size:.78rem;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:0}
-.cal-day:hover{background:#e7e2d5;border-color:var(--line)}
-.cal-day.in-trip{background:#f3eedf;border-color:#ded8c8;font-weight:750}
-.cal-day.selected{background:var(--deep)!important;color:#fff!important;border-color:var(--deep)!important}
-.cal-dot{width:4px;height:4px;background:var(--red);border-radius:50%;position:absolute;bottom:3px}
-.cal-day.selected .cal-dot{background:#f5a69d}
-.cal-day.empty{pointer-events:none}
-
-/* 12 Günlük Yatay Seyahat Şeridi */
-.plan-trip-bar{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:4px 0 2px}
-.plan-trip-bar::-webkit-scrollbar{display:none}
-.trip-bar-item{flex:0 0 88px;background:#f8f6f0;border:1px solid #d9d2c4;padding:10px 8px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;position:relative;transition:all .2s;cursor:pointer}
-.trip-bar-item:hover{background:#ece7dc;border-color:var(--deep)}
-.trip-bar-item.active{background:var(--deep);color:#fff7e9;border-color:var(--deep);box-shadow:0 6px 14px rgba(16,39,36,.22);transform:translateY(-2px)}
-.trip-bar-daynum{font-size:.65rem;font-weight:800;letter-spacing:.08em;color:var(--red)}
-.trip-bar-item.active .trip-bar-daynum{color:#f5b0a3}
-.trip-bar-date{font-size:.82rem;font-weight:750;color:inherit;white-space:nowrap}
-.trip-bar-city{font-size:.62rem;font-weight:800;letter-spacing:.08em;padding:2px 5px;border-radius:2px;margin-top:2px}
-.trip-bar-city.sin{background:#e2eeec;color:#175148}
-.trip-bar-city.kul{background:#f4e7e4;color:#9b3226}
-.trip-bar-item.active .trip-bar-city{background:rgba(255,255,255,.18);color:#fff}
-.trip-bar-badge{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:var(--red);color:#fff;font-size:.65rem;font-weight:800;display:grid;place-items:center;padding:0 4px;border:1px solid #fff}
-
-/* Seçili Gün Afişi */
-.plan-day-banner{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--deep);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px;flex-wrap:wrap}
-.plan-day-info{flex:1;min-width:240px}
-.plan-city-pill{display:inline-block;background:var(--red);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.1em;padding:3px 8px;margin-bottom:8px;text-transform:uppercase}
-.plan-day-info h2{font:normal clamp(1.45rem,3.2vw,2.1rem)/1.1 Georgia,serif;color:var(--deep);margin:0 0 6px}
-.plan-stats-text{font-size:.84rem;color:var(--muted);margin:0;font-weight:650}
-.plan-day-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.plan-city-select{height:38px;padding:0 10px;border:1px solid var(--line);background:var(--paper);color:var(--deep);font-size:.82rem;font-weight:750}
-.plan-action-chip{height:38px;padding:0 12px;border:1px solid var(--line);background:var(--paper);color:var(--deep);font-size:.8rem;font-weight:750;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
-.plan-action-chip:hover{border-color:var(--deep);background:#ece6d8}
-.plan-action-chip.danger{color:var(--red-dark)}
-.plan-action-chip.danger:hover{border-color:var(--red);background:#fbeee9}
-
-/* Not Defteri Kartı */
-.plan-notebook-card{background:var(--cream);border:1px solid var(--line);margin-bottom:24px;box-shadow:0 3px 0 rgba(63,53,39,.028);overflow:hidden}
-.notebook-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);background:#f6f3eb;flex-wrap:wrap;gap:12px}
-.notebook-title{display:flex;align-items:center;gap:12px}
-.seal-small{display:grid;place-items:center;width:26px;height:29px;background:var(--red);color:#fff;font:700 .95rem Georgia,serif;line-height:1}
-.notebook-title h3{font:normal 1.15rem Georgia,serif;color:var(--deep);margin:0 0 2px}
-.notebook-title small{font-size:.78rem;color:var(--muted)}
-.notebook-head-actions{display:flex;align-items:center;gap:12px}
-.notes-saved-tag{font-size:.78rem;font-weight:800;color:#2f685e;letter-spacing:.04em}
-
-/* Notion Görünüm / Düzenle Sekmesi */
-.notion-view-toggle{display:inline-flex;background:var(--paper);border:1px solid var(--line);padding:2px;border-radius:2px}
-.notion-tab-btn{border:none;background:transparent;color:var(--deep);font-size:.78rem;font-weight:750;padding:6px 12px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;transition:all .15s}
-.notion-tab-btn.active{background:var(--deep);color:#fff}
-
-/* Düzenleme Araç Çubuğu (Toolbar) */
-.notion-toolbar{display:flex;gap:6px;padding:9px 16px;background:#f0ebe0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
-.notion-toolbar::-webkit-scrollbar{display:none}
-.toolbar-btn{background:var(--paper);border:1px solid #d4ccbd;color:var(--deep);padding:5px 10px;font-size:.76rem;font-weight:750;border-radius:2px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;cursor:pointer;transition:background .15s}
-.toolbar-btn:hover{background:#e5ded0;border-color:var(--deep)}
-.toolbar-btn.paste-btn{background:var(--red);color:#fff;border-color:var(--red);margin-left:auto}
-.toolbar-btn.paste-btn:hover{background:var(--red-dark)}
-
-/* Notion Stili Zengin Okuma Görünümü */
-.notion-rendered-view{padding:24px 26px;min-height:160px;background:#fffdfa;line-height:1.75;font-size:.98rem;color:#1d2e2b;word-break:break-word}
-.notion-rendered-view.compact{padding:14px 16px;min-height:0;font-size:.9rem;line-height:1.6}
-.notion-h1{font:normal clamp(1.4rem,2.5vw,1.75rem)/1.22 Georgia,serif;color:var(--deep);margin:18px 0 10px;padding-bottom:8px;border-bottom:2px solid #eae3d4}
-.notion-h2{font:normal clamp(1.22rem,2.2vw,1.48rem)/1.26 Georgia,serif;color:var(--deep);margin:16px 0 8px}
-.notion-h3{font:normal clamp(1.08rem,1.9vw,1.26rem)/1.3 Georgia,serif;color:var(--red);margin:14px 0 6px;font-weight:700}
-.notion-bold{font-weight:850;color:#0b1e1b}
-.notion-italic{font-style:italic;color:#455451}
-.notion-code{background:#ece7db;color:var(--red-dark);font-family:ui-monospace,Menlo,monospace;font-size:.88em;padding:2px 6px;border-radius:3px}
-.notion-bullet-list{margin:10px 0 16px 20px;padding:0;list-style:disc}
-.notion-num-list{margin:10px 0 16px 22px;padding:0}
-.notion-bullet-list li,.notion-num-list li{margin-bottom:8px;line-height:1.65;padding-left:4px}
-.notion-bullet-list li::marker{color:var(--red);font-size:1.15em}
-.notion-num-list li::marker{color:var(--deep);font-weight:800}
-
-/* Notion Callout / İpucu Kutusu */
-.notion-callout{background:#fcf8ee;border:1px solid #e8dfcc;border-left:4px solid var(--red);padding:14px 17px;margin:16px 0;border-radius:0 3px 3px 0;display:flex;gap:12px;align-items:flex-start}
-.notion-callout .callout-icon{font-size:1.3rem;line-height:1;flex:none}
-.notion-callout .callout-text{font-size:.94rem;line-height:1.6;color:var(--ink)}
-
-/* Notion Görev Maddesi (Todo) */
-.notion-todo-item{display:flex;align-items:baseline;gap:10px;margin:7px 0;font-size:.95rem}
-.notion-todo-box{font-weight:900;color:var(--red);font-size:1.05rem;line-height:1}
-.notion-todo-item.done{text-decoration:line-through;opacity:.58;color:var(--muted)}
-
-/* Saat ve Bağlantı Rozetleri */
-.notion-time-badge{display:inline-block;background:#e9e3d5;color:var(--deep);font-weight:800;font-size:.82rem;padding:2px 7px;border-radius:3px;letter-spacing:.02em;margin-right:2px}
-.notion-link{color:var(--red);text-decoration:underline;text-underline-offset:3px;font-weight:750}
-.notion-p{margin:0 0 12px;line-height:1.7}
-
-/* Boş Durum Yer Tutucusu */
-.notion-empty-placeholder{text-align:center;padding:36px 18px;color:var(--muted)}
-.notion-empty-placeholder .placeholder-icon{font-size:2.2rem;display:block;margin-bottom:8px}
-.notion-empty-placeholder h4{font:normal 1.3rem Georgia,serif;color:var(--deep);margin:0 0 6px}
-.notion-empty-placeholder p{font-size:.9rem;max-width:460px;margin:0 auto 16px;line-height:1.55}
-
-/* Notion Düzenleme Alanı */
-.notion-editor-wrapper{padding:18px 20px;background:#fffdfa}
-.notion-editor-wrapper textarea{width:100%;border:1px solid var(--line);background:#fffef9;color:var(--ink);font-family:ui-sans-serif,-apple-system,sans-serif;font-size:.96rem;line-height:1.65;padding:14px;min-height:220px;resize:vertical;outline:none;border-radius:2px;display:block;box-sizing:border-box}
-.notion-editor-wrapper textarea:focus{border-color:var(--red);box-shadow:0 0 0 2px rgba(168,50,41,.12)}
-.editor-bottom-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;flex-wrap:wrap}
-.editor-hint{font-size:.78rem;color:var(--muted);line-height:1.4}
-
-/* Günlük Rota & Aktiviteler Listesi */
-.plan-items-section{background:var(--cream);border:1px solid var(--line);padding:22px;box-shadow:0 3px 0 rgba(63,53,39,.028)}
-.plan-items-header{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
-.plan-items-header h3{font:normal clamp(1.25rem,2.5vw,1.6rem) Georgia,serif;color:var(--deep);margin:0 0 3px}
-.plan-items-header small{font-size:.82rem;color:var(--muted)}
-.plan-items-list{display:grid;gap:10px}
-.plan-item-card{background:#fffdfa;border:1px solid #ded8cb;padding:14px 16px;display:grid;grid-template-columns:32px 1fr auto;gap:14px;align-items:flex-start;transition:all .2s;box-shadow:0 2px 0 rgba(63,53,39,.02)}
-.plan-item-card:hover{border-color:#b9b09f}
-.plan-item-card.done{opacity:.6;background:#f5f3ec}
-.plan-item-card.done .plan-item-title{text-decoration:line-through;color:var(--muted)}
-.plan-check-btn{width:26px;height:26px;border:2px solid #b8b0a1;background:#fff;color:var(--red);border-radius:3px;display:grid;place-items:center;font-weight:900;font-size:1.1rem;margin-top:2px;cursor:pointer;transition:all .15s}
-.plan-check-btn.checked{background:var(--deep);border-color:var(--deep);color:#fff}
-.plan-item-body{min-width:0}
-.plan-item-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
-.plan-item-time{font-size:.76rem;font-weight:800;color:var(--deep);background:#eae5d9;padding:2px 7px;border-radius:2px}
-.plan-item-cat{font-size:.76rem;font-weight:800;letter-spacing:.04em}
-.plan-item-title{font:normal 1.15rem/1.3 Georgia,serif;color:var(--deep);margin:0 0 4px;word-break:break-word}
-.plan-item-note{font-size:.84rem;color:var(--muted);line-height:1.45;margin:0}
-.plan-item-actions{display:flex;align-items:center;gap:4px}
-.plan-delete-btn{border:none;background:none;color:#a89f92;font-size:1.5rem;line-height:1;width:30px;height:30px;display:grid;place-items:center;cursor:pointer;transition:color .2s}
-.plan-delete-btn:hover{color:var(--red)}
-.empty-state.compact{padding:30px 15px}
-.empty-state.compact span{font-size:2rem}
-.empty-state.compact h3{font:normal 1.3rem Georgia,serif;color:var(--deep);margin:6px 0}
-.empty-state.compact p{font-size:.88rem;margin:0}
-
-/* Dialog Form Düzeni */
-.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.styled-select{width:100%;height:47px;padding:0 12px;border:1px solid var(--line);background:#fffef9;color:var(--ink);font-weight:600}
-.all-plans-scroll-body{max-height:75vh;overflow-y:auto;padding:18px 24px 28px;display:grid;gap:16px}
-.all-plan-day-card{background:#fffdfa;border:1px solid var(--line);padding:16px 18px;border-left:4px solid var(--deep)}
-.all-plan-day-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-.all-plan-day-head h3{font:normal 1.25rem Georgia,serif;color:var(--deep);margin:0 0 4px}
-.all-plan-city-badge{font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:2px 6px;text-transform:uppercase}
-.all-plan-city-badge.sin{background:#e2eeec;color:#175148}
-.all-plan-city-badge.kul{background:#f4e7e4;color:#9b3226}
-.all-plan-notes-box{background:#f8f6ee;border:1px dashed #ded7c7;padding:9px 12px;font-size:.85rem;line-height:1.5;color:var(--ink);margin-bottom:10px}
-.all-plan-items-list{list-style:none;padding:0;margin:0;display:grid;gap:6px}
-.all-plan-items-list li{display:flex;align-items:baseline;gap:8px;font-size:.88rem;color:var(--ink)}
-.all-plan-items-list li.done{text-decoration:line-through;color:var(--muted)}
-.all-plan-time{font-weight:800;font-size:.78rem;color:var(--red);flex:none;min-width:38px}
-
-@media(max-width:700px){
-  .plan-day-banner{padding:16px}
-  .plan-day-tools{width:100%;justify-content:space-between}
-  .plan-cal-popover{left:10px;right:10px;width:auto}
-  .form-row-2{grid-template-columns:1fr}
-  .notebook-head{flex-direction:column;align-items:flex-start;padding:14px 16px;gap:10px}
-  .notebook-head-actions{width:100%;justify-content:space-between}
-  .notion-rendered-view{padding:18px 16px;font-size:.95rem;line-height:1.7}
-  .notion-rendered-view.compact{padding:12px 14px}
-  .notion-h1{font-size:1.35rem;margin:14px 0 8px}
-  .notion-h2{font-size:1.2rem;margin:12px 0 6px}
-  .notion-h3{font-size:1.05rem;margin:10px 0 4px}
-  .notion-callout{padding:12px 14px;gap:10px;margin:12px 0}
-  .notion-editor-wrapper{padding:14px 14px}
-  .notion-editor-wrapper textarea{font-size:.92rem;min-height:190px}
-  .editor-bottom-bar{flex-direction:column;align-items:stretch}
-  .editor-bottom-bar .primary-button{width:100%;justify-content:center}
+  --text-main: #fdf7ec;          /* Fildişi beyazı ana metin */
+  --text-gold: #f4dc9a;          /* Altın sarısı editoryal metin */
+  --text-muted: #cbb497;         /* Küllü parşömen ikincil metin */
+  --text-dim: #998369;           /* Soluk dipnot metni */
+  
+  --line-gold: rgba(212, 175, 55, 0.35); /* Altın yaldız ayraç çizgisi */
+  --line-soft: rgba(255, 255, 255, 0.12); /* Yumuşak çizgi */
+  --shadow-box: 0 12px 35px rgba(0, 0, 0, 0.45);
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", serif;
+  color: var(--text-main);
+  background: var(--bg-deep);
 }
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg-deep); }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg-deep);
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, #460d13 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 50%, #300609 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, #290407 0%, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+a { color: inherit; }
+h1, h2, h3, h4, p { margin-top: 0; }
+[hidden] { display: none !important; }
+
+/* Tipografik Seçkinlik */
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: .75rem;
+  line-height: 1.4;
+  letter-spacing: .24em;
+  font-weight: 800;
+  color: var(--gold-bright);
+  text-transform: uppercase;
+}
+
+/* Geleneksel Dikey & Kare Mühürler (旅, 記, 福) */
+.seal {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 36px;
+  background: var(--red-cinnabar);
+  border: 1px solid var(--gold-bright);
+  color: var(--gold-bright);
+  font: 700 1.25rem Georgia, "Songti SC", serif;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(212, 175, 55, 0.5);
+  flex-shrink: 0;
+}
+.seal-small {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 31px;
+  background: var(--red-cinnabar);
+  border: 1px solid var(--gold-bright);
+  color: var(--gold-bright);
+  font: 700 1.05rem Georgia, "Songti SC", serif;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   GİRİŞ / AÇILIŞ PERDESİ (INTRO COVER)
+   ========================================================================== */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  background: #190204;
+  color: var(--text-main);
+  overflow: hidden;
+}
+.intro-visual {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  perspective: 1100px;
+  overflow: hidden;
+}
+.intro-scene {
+  height: 100%;
+  width: 100%;
+  transform: scale(1.1) rotateY(-3deg);
+  animation: scene-arrive 1.6s cubic-bezier(.17,.67,.2,1) both, scene-breathe 20s ease-in-out 1.6s infinite alternate;
+  transform-origin: 60% 60%;
+}
+.intro-scene img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  filter: contrast(1.1) saturate(1.2);
+}
+.intro-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: 
+    linear-gradient(90deg, rgba(25,2,4,0.92) 0%, rgba(43,6,9,0.78) 55%, rgba(43,6,9,0.4) 100%),
+    linear-gradient(0deg, rgba(20,2,4,0.85) 0%, transparent 60%);
+}
+.intro-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px clamp(24px, 5vw, 76px);
+  animation: fade-up .9s .4s both;
+  border-bottom: 1px solid var(--line-gold);
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .25em;
+  color: var(--gold-bright);
+}
+.intro-vertical-banner {
+  display: flex;
+  gap: 8px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: Georgia, "Songti SC", "PingFang TC", serif;
+  font-size: .68rem;
+  letter-spacing: .22em;
+  color: var(--gold-bright);
+  padding: 6px 8px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(30, 4, 7, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 600px) {
+  .intro-vertical-banner { display: none; }
+}
+.intro-content {
+  width: min(780px, 100%);
+  margin: auto 0 auto clamp(24px, 9vw, 150px);
+  padding: 40px 24px 60px 0;
+  animation: fade-up 1s .6s both;
+}
+.intro-content h1 {
+  margin: 0;
+  font: normal clamp(3.6rem, 7.5vw, 7.6rem)/.96 Georgia, "Songti SC", serif;
+  letter-spacing: -.05em;
+  color: #fff9ed;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+.intro-content h1 span {
+  display: block;
+  margin-top: 12px;
+  font-size: .78em;
+  color: var(--gold-bright);
+}
+.intro-route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-gold);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  color: var(--text-gold);
+}
+.enter-button {
+  margin-top: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  border: 1px solid var(--gold-bright);
+  color: #fffbf2;
+  padding: 16px 26px;
+  min-width: 240px;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 230, 160, 0.4);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.enter-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #b81b24 0%, #7d1017 100%);
+  box-shadow: 0 12px 36px rgba(212, 175, 55, 0.35);
+  border-color: #fff;
+}
+.enter-button span { font-size: 1.4rem; color: var(--gold-bright); }
+
+@keyframes scene-arrive { from { opacity: .4; transform: scale(1.22) rotateY(-7deg); } to { opacity: 1; transform: scale(1.1) rotateY(-3deg); } }
+@keyframes scene-breathe { to { transform: scale(1.16) rotateY(2deg); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   ANA UYGULAMA KABUĞU (APP SHELL) & HEADER
+   ========================================================================== */
+.app-shell { min-height: 100vh; padding-bottom: 84px; }
+.site-header {
+  height: 72px;
+  padding: 0 clamp(18px, 4vw, 76px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--gold-brass);
+  background: rgba(35, 5, 8, 0.94);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--text-main);
+  font: normal 1.25rem Georgia, "Songti SC", serif;
+  white-space: nowrap;
+}
+.brand b { font-weight: normal; color: var(--gold-bright); }
+.city-toggle {
+  border: 1px solid var(--gold-brass);
+  background: linear-gradient(180deg, #440d12 0%, #2b0609 100%);
+  color: var(--text-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 15px;
+  font-size: .84rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  min-height: 42px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(212,175,55,0.25);
+  transition: all .2s;
+}
+.city-toggle:hover {
+  border-color: var(--gold-bright);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.chevron { font-size: 1.1rem; color: var(--gold); }
+
+/* ==========================================================================
+   ANA SAYFA (HOME HERO & ACTION GRID)
+   ========================================================================== */
+.home-hero {
+  height: clamp(340px, 42vw, 490px);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gold-brass);
+}
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('./assets/chinatown-evening.webp');
+  background-size: cover;
+  background-position: center 60%;
+  transform: scale(1.03);
+  filter: contrast(1.1) saturate(1.15);
+}
+.home-hero-image.kl {
+  background-image: url('./assets/kuala-lumpur-evening.webp');
+  background-position: center 54%;
+}
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(28,3,5,0.92) 0%, rgba(45,6,9,0.7) 65%, rgba(45,6,9,0.35) 100%),
+    linear-gradient(0deg, rgba(25,2,4,0.85) 0%, transparent 60%);
+}
+.home-hero-content {
+  position: relative;
+  max-width: 1180px;
+  margin: auto;
+  padding: clamp(70px, 10vw, 120px) 28px 30px;
+}
+.hero-meta {
+  margin: 0 0 14px;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  color: var(--gold-bright);
+}
+.home-hero h1 {
+  font: normal clamp(3.2rem, 6vw, 5.8rem)/.98 Georgia, "Songti SC", serif;
+  letter-spacing: -.05em;
+  color: #fff9ed;
+  margin: 0 0 14px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+}
+.home-hero p:last-child {
+  font-size: 1.08rem;
+  color: var(--text-gold);
+  margin: 0;
+}
+.home-inner {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 28px 70px;
+}
+
+/* Tarih Şeridi */
+.date-strip {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid var(--line-gold);
+  padding: 20px 0;
+  color: var(--text-muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.date-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: all .2s;
+}
+.date-strip span:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #fff;
+}
+.date-strip b { color: var(--gold-bright); font-weight: 900; }
+
+.home-section { margin-top: 50px; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--line-gold);
+  padding-bottom: 12px;
+}
+.section-head h2 {
+  font: normal clamp(1.8rem, 3.2vw, 2.5rem)/1.1 Georgia, "Songti SC", serif;
+  letter-spacing: -.03em;
+  color: #fff8eb;
+  margin: 0;
+}
+.text-link {
+  border: 0;
+  border-bottom: 1px solid var(--gold-bright);
+  padding: 2px 0 4px;
+  background: none;
+  color: var(--gold-bright);
+  font-size: .88rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.text-link:hover { color: #fff; border-color: #fff; }
+
+/* 4'lü Hızlı Erişim Kartları (Çift Altın Çerçeveli Çin Lake Kutuları) */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 15px;
+}
+.action-tile {
+  min-height: 165px;
+  text-align: left;
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.28);
+  outline-offset: -5px;
+  background: linear-gradient(170deg, #3f0b10 0%, #260508 100%);
+  color: var(--text-main);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(184, 27, 36, 0.15);
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+}
+.action-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-bright);
+  outline-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.6), var(--gold-glow);
+}
+.action-symbol {
+  font: normal 2.2rem Georgia, "Songti SC", serif;
+  color: var(--gold-bright);
+  margin-bottom: auto;
+  line-height: 1;
+}
+.action-tile strong {
+  font: normal 1.35rem Georgia, "Songti SC", serif;
+  color: #fff9ed;
+  margin: 18px 0 4px;
+}
+.action-tile small {
+  font-size: .84rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   ANA SAYFADAKİ GÜNÜN PLANI & NOTLARI KUTUSU (HEDİYE KUTUSU FORMATI)
+   ========================================================================== */
+.home-plan-box {
+  background: linear-gradient(160deg, #3d0a0f 0%, #250407 100%);
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.28);
+  outline-offset: -6px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow-box), inset 0 0 25px rgba(143, 18, 26, 0.2);
+  margin-top: 10px;
+}
+.home-plan-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.home-plan-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  color: var(--gold-bright);
+  margin-bottom: 6px;
+}
+.home-plan-title {
+  font: normal clamp(1.45rem, 2.8vw, 1.95rem)/1.15 Georgia, "Songti SC", serif;
+  color: #fff8ed;
+  margin: 0 0 5px;
+}
+.home-plan-meta {
+  font-size: .88rem;
+  color: var(--text-gold);
+  margin: 0;
+  font-weight: 600;
+}
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 20px;
+  min-height: 48px;
+  border: 1px solid var(--gold-bright);
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  color: #fffbf2;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: .88rem;
+  letter-spacing: .05em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 230, 160, 0.35);
+  transition: all .2s;
+}
+.primary-button:hover {
+  background: linear-gradient(180deg, #b81b24 0%, #7d1017 100%);
+  border-color: #fff;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+.primary-button.small {
+  padding: 8px 16px;
+  min-height: 38px;
+  font-size: .82rem;
+  gap: 10px;
+}
+.home-plan-notes-preview {
+  background: rgba(22, 2, 4, 0.65);
+  border: 1px dashed var(--gold-dim);
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+.home-plan-notes-preview .preview-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  color: var(--gold);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.home-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 9px;
+}
+.home-plan-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .94rem;
+  color: var(--text-main);
+  background: rgba(43, 6, 9, 0.6);
+  padding: 11px 16px;
+  border: 1px solid var(--line-gold);
+}
+.home-plan-list li.done {
+  opacity: .5;
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+.home-plan-check { color: var(--gold-bright); font-weight: bold; font-size: 1.1rem; }
+.home-plan-more {
+  font-size: .82rem;
+  color: var(--gold);
+  background: none !important;
+  border: none !important;
+  padding: 4px 0 !important;
+  font-weight: 750;
+}
+.home-plan-empty {
+  color: var(--text-muted);
+  font-size: .9rem;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   GÜNLÜK PLAN & TAKVİM SAYFASI (VIEW-PLAN)
+   ========================================================================== */
+.content-view {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 26px 100px;
+}
+.view-heading { margin-bottom: 34px; }
+.view-heading.compact { margin-bottom: 26px; }
+.view-heading h1 {
+  font: normal clamp(2.8rem, 5.8vw, 4.8rem)/1.02 Georgia, "Songti SC", serif;
+  color: #fff9ed;
+  letter-spacing: -.04em;
+  margin: 0 0 12px;
+}
+.view-heading.compact h1 {
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  margin-bottom: 8px;
+}
+.view-heading p:last-child {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 680px;
+}
+
+/* Takvim & 12 Günlük Seyahat Şeridi Kartı */
+.plan-calendar-card {
+  background: linear-gradient(170deg, #3b0a0f 0%, #250407 100%);
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.25);
+  outline-offset: -5px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-box);
+  position: relative;
+}
+.plan-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.plan-date-nav { display: flex; align-items: center; gap: 6px; }
+.icon-nav-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-card-light);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-bright);
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: all .2s;
+}
+.icon-nav-btn:hover {
+  background: var(--red-crimson);
+  border-color: var(--gold-bright);
+}
+.today-tag-btn {
+  height: 36px;
+  padding: 0 15px;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card-light);
+  color: var(--text-gold);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  transition: all .2s;
+}
+.today-tag-btn:hover {
+  background: var(--red-crimson);
+  border-color: var(--gold-bright);
+  color: #fff;
+}
+.plan-cal-actions { display: flex; gap: 8px; }
+.plan-tool-btn {
+  height: 36px;
+  padding: 0 13px;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card-light);
+  color: var(--text-gold);
+  font-size: .82rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+.plan-tool-btn:hover {
+  border-color: var(--gold-bright);
+  color: #fff;
+  background: var(--red-crimson);
+}
+
+/* 12 Günlük Yatay Seyahat Kartları (Görseldeki Kutu Sekmeleri gibi) */
+.plan-trip-bar {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 2px;
+}
+.plan-trip-bar::-webkit-scrollbar { display: none; }
+.trip-bar-item {
+  flex: 0 0 92px;
+  background: linear-gradient(180deg, #36080d 0%, #220306 100%);
+  border: 1px solid var(--gold-dim);
+  padding: 11px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+  position: relative;
+  transition: all .2s;
+  cursor: pointer;
+}
+.trip-bar-item:hover {
+  border-color: var(--gold-bright);
+  background: #460d13;
+  transform: translateY(-2px);
+}
+.trip-bar-item.active {
+  background: linear-gradient(180deg, #9b151f 0%, #5e0b12 100%);
+  border: 1px solid var(--gold-bright);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), var(--gold-glow);
+  transform: translateY(-3px);
+}
+.trip-bar-daynum {
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--gold-bright);
+}
+.trip-bar-item.active .trip-bar-daynum { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.4); }
+.trip-bar-date {
+  font-size: .84rem;
+  font-weight: 800;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+.trip-bar-city {
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-top: 3px;
+}
+.trip-bar-city.sin { background: rgba(212, 175, 55, 0.18); color: var(--gold-bright); }
+.trip-bar-city.kul { background: rgba(184, 27, 36, 0.35); color: #ffb4ba; }
+.trip-bar-item.active .trip-bar-city { background: rgba(0, 0, 0, 0.35); color: #fff; }
+.trip-bar-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--gold-bright);
+  color: var(--bg-deep);
+  font-size: .68rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  border: 1px solid var(--bg-deep);
+}
+
+/* Açılır Mini Takvim Popover (Antika Asya Sandığı Stili) */
+.plan-cal-popover {
+  position: absolute;
+  top: 70px;
+  right: 22px;
+  z-index: 50;
+  width: 300px;
+  background: #2b0609;
+  border: 2px solid var(--gold-bright);
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), var(--gold-glow);
+}
+.plan-cal-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line-gold);
+  padding-bottom: 8px;
+}
+.plan-cal-popover-head strong {
+  font: normal 1.15rem Georgia, "Songti SC", serif;
+  color: var(--gold-bright);
+}
+.plan-cal-popover-head .icon-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+.plan-cal-popover-head .close-x {
+  border: none;
+  background: none;
+  color: var(--gold-bright);
+  font-size: 1.4rem;
+}
+.plan-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.plan-cal-days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-day {
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-main);
+  font-size: .8rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+}
+.cal-day:hover { background: #440d12; border-color: var(--gold); }
+.cal-day.in-trip {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-dim);
+  font-weight: 800;
+  color: var(--gold-bright);
+}
+.cal-day.selected {
+  background: var(--red-cinnabar) !important;
+  color: #fff !important;
+  border-color: var(--gold-bright) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+.cal-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold-bright);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 3px;
+}
+
+/* Seçili Gün Afişi */
+.plan-day-banner {
+  background: linear-gradient(160deg, #3d0a0f 0%, #240407 100%);
+  border: 1px solid var(--gold-brass);
+  border-left: 5px solid var(--gold-bright);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-box);
+}
+.plan-day-info { flex: 1; min-width: 240px; }
+.plan-city-pill {
+  display: inline-block;
+  background: var(--red-cinnabar);
+  border: 1px solid var(--gold-bright);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  padding: 3px 10px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.plan-day-info h2 {
+  font: normal clamp(1.45rem, 3.2vw, 2.2rem)/1.12 Georgia, "Songti SC", serif;
+  color: #fffbf2;
+  margin: 0 0 6px;
+  letter-spacing: -.02em;
+}
+.plan-stats-text {
+  font-size: .86rem;
+  color: var(--text-gold);
+  margin: 0;
+  font-weight: 650;
+}
+.plan-day-tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.plan-city-select {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  font-size: .84rem;
+  font-weight: 800;
+}
+.plan-action-chip {
+  height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  font-size: .82rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+.plan-action-chip:hover {
+  border-color: var(--gold-bright);
+  background: var(--red-crimson);
+  color: #fff;
+}
+.plan-action-chip.danger { color: #f28b82; border-color: rgba(242, 139, 130, 0.4); }
+.plan-action-chip.danger:hover { background: #661017; color: #fff; border-color: #f28b82; }
+
+/* ==========================================================================
+   GÜNÜN NOT DEFTERİ (NOTION & EDİTORYAL ASYA PARŞÖMENİ)
+   ========================================================================== */
+.plan-notebook-card {
+  background: linear-gradient(170deg, #37080c 0%, #200305 100%);
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.25);
+  outline-offset: -5px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-box);
+  overflow: hidden;
+}
+.notebook-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line-gold);
+  background: rgba(30, 4, 6, 0.85);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.notebook-title { display: flex; align-items: center; gap: 14px; }
+.notebook-title h3 {
+  font: normal 1.25rem Georgia, "Songti SC", serif;
+  color: #fffbf2;
+  margin: 0 0 3px;
+}
+.notebook-title small { font-size: .8rem; color: var(--text-muted); }
+.notebook-head-actions { display: flex; align-items: center; gap: 12px; }
+.notes-saved-tag { font-size: .8rem; font-weight: 800; color: #7ee2b8; letter-spacing: .05em; }
+
+/* Notion Görünüm / Düzenle Buton Grubu (Görseldeki Altın Düğme Tarzı) */
+.notion-view-toggle {
+  display: inline-flex;
+  background: #190204;
+  border: 1px solid var(--gold-brass);
+  padding: 2px;
+}
+.notion-tab-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-gold);
+  font-size: .8rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.notion-tab-btn.active {
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Düzenleme Araç Çubuğu (Toolbar) */
+.notion-toolbar {
+  display: flex;
+  gap: 7px;
+  padding: 10px 18px;
+  background: rgba(22, 2, 4, 0.9);
+  border-bottom: 1px solid var(--line-gold);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.notion-toolbar::-webkit-scrollbar { display: none; }
+.toolbar-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  color: var(--text-gold);
+  padding: 6px 11px;
+  font-size: .78rem;
+  font-weight: 800;
+  border-radius: 2px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.toolbar-btn:hover {
+  background: var(--red-crimson);
+  border-color: var(--gold-bright);
+  color: #fff;
+}
+.toolbar-btn.paste-btn {
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  color: #fff;
+  border-color: var(--gold-bright);
+  margin-left: auto;
+}
+.toolbar-btn.paste-btn:hover {
+  background: linear-gradient(180deg, #b81b24 0%, #7d1017 100%);
+}
+
+/* Notion Stili Zengin Okuma Görünümü */
+.notion-rendered-view {
+  padding: 26px 28px;
+  min-height: 180px;
+  background: rgba(20, 2, 4, 0.45);
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--text-main);
+  word-break: break-word;
+}
+.notion-rendered-view.compact {
+  padding: 14px 16px;
+  min-height: 0;
+  font-size: .92rem;
+  line-height: 1.65;
+}
+.notion-h1 {
+  font: normal clamp(1.45rem, 2.6vw, 1.85rem)/1.22 Georgia, "Songti SC", serif;
+  color: var(--gold-bright);
+  margin: 22px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-gold);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.notion-h2 {
+  font: normal clamp(1.25rem, 2.3vw, 1.55rem)/1.26 Georgia, "Songti SC", serif;
+  color: var(--gold-bright);
+  margin: 18px 0 10px;
+}
+.notion-h3 {
+  font: normal clamp(1.1rem, 2vw, 1.32rem)/1.3 Georgia, "Songti SC", serif;
+  color: #ff9e9e;
+  margin: 16px 0 8px;
+  font-weight: 700;
+}
+.notion-bold {
+  font-weight: 900;
+  color: var(--gold-bright);
+  text-shadow: 0 0 1px rgba(246, 227, 161, 0.3);
+}
+.notion-italic { font-style: italic; color: var(--text-gold); }
+.notion-code {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-bright);
+  border: 1px solid var(--gold-dim);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: .88em;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.notion-bullet-list { margin: 12px 0 18px 24px; padding: 0; list-style: disc; }
+.notion-num-list { margin: 12px 0 18px 26px; padding: 0; }
+.notion-bullet-list li, .notion-num-list li { margin-bottom: 9px; line-height: 1.7; padding-left: 4px; }
+.notion-bullet-list li::marker { color: var(--gold-bright); font-size: 1.2em; }
+.notion-num-list li::marker { color: var(--gold-bright); font-weight: 800; }
+
+/* Notion Callout / İpucu Kutusu (Görseldeki Altın Detaylı Açıklama Kutusu) */
+.notion-callout {
+  background: rgba(46, 7, 11, 0.85);
+  border: 1px solid var(--gold-brass);
+  border-left: 4px solid var(--gold-bright);
+  padding: 16px 20px;
+  margin: 18px 0;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.08);
+}
+.notion-callout .callout-icon { font-size: 1.35rem; line-height: 1; flex: none; }
+.notion-callout .callout-text { font-size: .95rem; line-height: 1.65; color: var(--text-main); }
+
+/* Notion Görev Maddesi (Todo) */
+.notion-todo-item { display: flex; align-items: baseline; gap: 12px; margin: 8px 0; font-size: .96rem; }
+.notion-todo-box { font-weight: 900; color: var(--gold-bright); font-size: 1.1rem; line-height: 1; }
+.notion-todo-item.done { text-decoration: line-through; opacity: .5; color: var(--text-dim); }
+
+/* Saat ve Linkler */
+.notion-time-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-bright);
+  font-weight: 800;
+  font-size: .84rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: .03em;
+  margin-right: 3px;
+}
+.notion-link {
+  color: var(--gold-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 800;
+}
+.notion-p { margin: 0 0 14px; line-height: 1.75; }
+
+/* Boş Durum Yer Tutucusu */
+.notion-empty-placeholder { text-align: center; padding: 42px 20px; color: var(--text-muted); }
+.notion-empty-placeholder .placeholder-icon { font-size: 2.4rem; display: block; margin-bottom: 10px; color: var(--gold); }
+.notion-empty-placeholder h4 { font: normal 1.35rem Georgia, "Songti SC", serif; color: var(--gold-bright); margin: 0 0 6px; }
+.notion-empty-placeholder p { font-size: .92rem; max-width: 480px; margin: 0 auto 18px; line-height: 1.6; }
+
+/* Notion Düzenleme Alanı */
+.notion-editor-wrapper { padding: 20px 22px; background: rgba(18, 2, 4, 0.8); }
+.notion-editor-wrapper textarea {
+  width: 100%;
+  border: 1px solid var(--gold-dim);
+  background: #170204;
+  color: var(--text-main);
+  font-family: ui-monospace, SFMono-Regular, "Segoe UI", sans-serif;
+  font-size: .98rem;
+  line-height: 1.7;
+  padding: 16px;
+  min-height: 230px;
+  resize: vertical;
+  outline: none;
+  border-radius: 2px;
+  display: block;
+}
+.notion-editor-wrapper textarea:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+.editor-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.editor-hint { font-size: .8rem; color: var(--text-muted); line-height: 1.45; }
+
+/* ==========================================================================
+   GÜNLÜK ROTA & AKTİVİTELER LİSTESİ (ÇİFT ÇERÇEVELİ MÜHÜRLÜ KARTLAR)
+   ========================================================================== */
+.plan-items-section {
+  background: linear-gradient(170deg, #37080c 0%, #200305 100%);
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.25);
+  outline-offset: -5px;
+  padding: 24px;
+  box-shadow: var(--shadow-box);
+}
+.plan-items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line-gold);
+  padding-bottom: 12px;
+}
+.plan-items-header h3 {
+  font: normal clamp(1.3rem, 2.6vw, 1.7rem) Georgia, "Songti SC", serif;
+  color: #fffbf2;
+  margin: 0 0 3px;
+}
+.plan-items-header small { font-size: .84rem; color: var(--text-muted); }
+.plan-items-list { display: grid; gap: 11px; }
+
+.plan-item-card {
+  background: linear-gradient(180deg, #440d12 0%, #2b0609 100%);
+  border: 1px solid var(--gold-dim);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 15px;
+  align-items: flex-start;
+  transition: all .2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+.plan-item-card:hover {
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5), var(--gold-glow);
+}
+.plan-item-card.done {
+  opacity: .55;
+  background: #1c0305;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.plan-item-card.done .plan-item-title {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+.plan-check-btn {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--gold-brass);
+  background: #230407;
+  color: var(--gold-bright);
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.plan-check-btn.checked {
+  background: var(--red-cinnabar);
+  border-color: var(--gold-bright);
+  color: #fff;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+.plan-item-body { min-width: 0; }
+.plan-item-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; flex-wrap: wrap; }
+.plan-item-time {
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.16);
+  border: 1px solid var(--gold-dim);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+.plan-item-cat { font-size: .78rem; font-weight: 800; letter-spacing: .04em; }
+.plan-item-title {
+  font: normal 1.22rem/1.3 Georgia, "Songti SC", serif;
+  color: #fffbf2;
+  margin: 0 0 4px;
+  word-break: break-word;
+}
+.plan-item-note { font-size: .86rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.plan-item-actions { display: flex; align-items: center; gap: 4px; }
+.plan-delete-btn {
+  border: none;
+  background: none;
+  color: var(--gold-dim);
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: color .2s;
+}
+.plan-delete-btn:hover { color: #f28b82; }
+
+/* ==========================================================================
+   CÜMLELER & KONUŞMA REHBERİ
+   ========================================================================== */
+.toolbar { display: flex; gap: 10px; }
+.search-field, .select-field {
+  height: 54px;
+  border: 1px solid var(--gold-dim);
+  background: linear-gradient(180deg, #380a0f 0%, #240407 100%);
+  display: flex;
+  align-items: center;
+}
+.search-field { flex: 1; min-width: 0; padding: 0 16px; gap: 12px; }
+.search-field span { font-size: 1.8rem; color: var(--gold-bright); line-height: 1; }
+.search-field input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: var(--text-main);
+}
+.search-field input::placeholder { color: var(--text-dim); }
+.select-field { gap: 5px; padding: 0 10px 0 14px; color: var(--text-muted); font-size: .82rem; }
+.select-field select {
+  border: 0;
+  background: none;
+  color: var(--gold-bright);
+  font-weight: 800;
+  outline: none;
+  max-width: 120px;
+}
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 22px 0;
+}
+.category-tabs::-webkit-scrollbar { display: none; }
+.category-tabs button {
+  white-space: nowrap;
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  padding: 9px 15px;
+  min-height: 40px;
+  font-size: .86rem;
+  font-weight: 750;
+  transition: all .2s;
+}
+.category-tabs button.active {
+  background: linear-gradient(180deg, #9b151f 0%, #5e0b12 100%);
+  color: #fff;
+  border-color: var(--gold-bright);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), var(--gold-glow);
+}
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 16px;
+  font-size: .84rem;
+  color: var(--text-muted);
+}
+.phrase-list { display: grid; gap: 11px; }
+.phrase-card {
+  background: linear-gradient(170deg, #380a0f 0%, #240407 100%);
+  border: 1px solid var(--gold-brass);
+  outline: 1px solid rgba(212, 175, 55, 0.2);
+  outline-offset: -5px;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+.phrase-category {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+.phrase-card h3 {
+  font: normal clamp(1.35rem, 2.5vw, 1.6rem)/1.25 Georgia, "Songti SC", serif;
+  color: #fffbf2;
+  margin: 6px 0 10px;
+  letter-spacing: -0.01em;
+}
+.phrase-translation {
+  font-size: clamp(1.55rem, 3.8vw, 2rem);
+  font-weight: 850;
+  line-height: 1.35;
+  color: var(--gold-bright);
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.phrase-pronunciation {
+  font-size: clamp(1.08rem, 2.2vw, 1.25rem);
+  font-weight: 750;
+  color: #fff8ea;
+  margin: 0 0 6px;
+  letter-spacing: 0.01em;
+}
+.phrase-pinyin {
+  font-size: clamp(0.96rem, 2vw, 1.12rem);
+  font-weight: 600;
+  color: var(--text-gold);
+  margin: 0;
+  opacity: 0.92;
+}
+.phrase-tools { display: flex; align-items: start; gap: 8px; }
+.tool-button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-bright);
+  font-size: 1.1rem;
+  flex: none;
+  transition: all .2s;
+}
+.tool-button:hover {
+  background: var(--red-crimson);
+  border-color: var(--gold-bright);
+}
+.tool-button.play {
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  border-color: var(--gold-bright);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+.tool-button.saved {
+  background: var(--gold-bright);
+  color: var(--bg-deep);
+  border-color: var(--gold-bright);
+}
+.home-phrases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.home-phrases .phrase-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 205px; }
+.home-note { margin: 25px 0 0; color: var(--text-muted); font-size: .88rem; line-height: 1.5; }
+.home-note span { color: var(--gold-bright); }
+
+/* ==========================================================================
+   GEZİ HARİTASI VE LİSTELER
+   ========================================================================== */
+.map-view { max-width: 1100px; }
+.map-section {
+  background: linear-gradient(170deg, #380a0f 0%, #240407 100%);
+  border: 1px solid var(--gold-brass);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-box);
+}
+.map-status {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 16px;
+  color: var(--text-gold);
+  font-weight: 800;
+  font-size: .92rem;
+}
+.progress-track {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--gold-dim);
+  flex: 1;
+  overflow: hidden;
+}
+.progress-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #8f121a, var(--gold-bright));
+  transition: width .3s;
+}
+.map-filters { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 14px; }
+.map-filters button {
+  white-space: nowrap;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  color: var(--text-gold);
+  padding: 9px 14px;
+  font-size: .84rem;
+  font-weight: 800;
+}
+.map-filters button.active {
+  background: var(--red-cinnabar);
+  border-color: var(--gold-bright);
+  color: #fff;
+  box-shadow: var(--gold-glow);
+}
+#travel-map {
+  height: 420px;
+  background: #1c0305;
+  border: 1px solid var(--gold-dim);
+  z-index: 1;
+}
+.map-legend {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 14px 0 20px;
+  color: var(--text-muted);
+  font-size: .8rem;
+}
+.map-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.map-legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 1px solid #fff; }
+.pin-unvisited { background: var(--red-cinnabar); }
+.pin-visited { background: #2f685e; }
+.pin-hotel { background: var(--gold); }
+.map-list-tools { display: flex; gap: 8px; }
+.map-list-tools select {
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  padding: 0 10px;
+  font-size: .82rem;
+  max-width: 140px;
+}
+.map-place-count { margin: 18px 0 10px; color: var(--text-muted); font-size: .84rem; }
+.map-place-list {
+  max-height: 480px;
+  overflow-y: auto;
+  border-top: 1px solid var(--line-gold);
+}
+.place-row {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 6px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+.place-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--red-cinnabar); }
+.place-row.visited .place-dot { background: #2f685e; }
+.place-row.hotel .place-dot { background: var(--gold); }
+.place-name {
+  border: 0;
+  background: none;
+  text-align: left;
+  padding: 0;
+  color: #fffbf2;
+  font-weight: 750;
+  line-height: 1.35;
+}
+.place-name:hover { color: var(--gold-bright); text-decoration: underline; }
+.place-meta { font-size: .74rem; color: var(--text-muted); margin-top: 4px; }
+.place-meta .paid { color: #f28b82; }
+.visit-toggle {
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  padding: 8px 12px;
+  min-height: 38px;
+  font-size: .8rem;
+  font-weight: 800;
+}
+.place-row.visited .visit-toggle {
+  background: rgba(47, 104, 94, 0.4);
+  color: #7ee2b8;
+  border-color: #2f685e;
+}
+.list-destination {
+  background: linear-gradient(170deg, #380a0f 0%, #240407 100%);
+  border: 1px solid var(--gold-brass);
+  padding: 28px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.list-destination:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--gold-bright);
+}
+.destination-index {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold-bright);
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+.list-destination p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 14px 0 24px;
+}
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 13px 18px;
+  min-height: 48px;
+  border: 1px solid var(--gold-bright);
+  background: linear-gradient(180deg, #9b151f 0%, #680d14 100%);
+  color: #fff8e8;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: .88rem;
+}
+
+/* ==========================================================================
+   SERBEST ÇEVİRİ
+   ========================================================================== */
+.translate-card {
+  background: linear-gradient(170deg, #380a0f 0%, #240407 100%);
+  border: 1px solid var(--gold-brass);
+  padding: 26px;
+  display: grid;
+  gap: 14px;
+}
+.translate-card label, .phrase-dialog label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+}
+.translate-card textarea, .translate-card select, .phrase-dialog input, .styled-select {
+  width: 100%;
+  border: 1px solid var(--gold-dim);
+  background: #190204;
+  color: var(--text-main);
+  padding: 14px;
+  min-height: 48px;
+}
+.translation-result {
+  margin-top: 18px;
+  border: 1px solid var(--gold-bright);
+  background: linear-gradient(170deg, #440d12 0%, #2b0609 100%);
+  padding: 24px;
+  box-shadow: var(--gold-glow);
+}
+.translation-result #translated-text {
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: var(--gold-bright);
+  font-weight: 800;
+  margin: 14px 0 22px;
+}
+.secondary-button {
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-gold);
+  padding: 12px 20px;
+  font-weight: 800;
+  min-height: 48px;
+}
+.translation-tip {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: .86rem;
+  line-height: 1.6;
+}
+.tip-icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold-bright);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-family: Georgia, serif;
+}
+
+/* ==========================================================================
+   ALT NAVİGASYON (BOTTOM NAV - LAKE & ALTIN BANT)
+   ========================================================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(26, 3, 5, 0.96);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--gold-brass);
+  display: flex;
+  justify-content: center;
+  z-index: 45;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
+}
+.bottom-nav button {
+  min-width: 0 !important;
+  max-width: 120px !important;
+  flex: 1;
+  background: none;
+  border: 0;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 2px;
+  transition: all .2s;
+}
+.bottom-nav button.active {
+  color: var(--gold-bright);
+  border-top: 3px solid var(--gold-bright);
+  background: linear-gradient(180deg, rgba(212,175,55,0.14) 0%, transparent 100%);
+}
+.bottom-nav button span {
+  font: normal 1.38rem Georgia, "Songti SC", serif;
+  line-height: 1.1;
+  color: inherit;
+}
+.bottom-nav button small {
+  font-size: .7rem !important;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+/* ==========================================================================
+   DİALOGLAR VE AÇILIR PENCERELER (MODALS)
+   ========================================================================== */
+.phrase-dialog {
+  width: min(92vw, 520px);
+  max-height: 90vh;
+  border: 1px solid var(--gold-bright);
+  outline: 1px solid rgba(212, 175, 55, 0.3);
+  outline-offset: -5px;
+  background: #280508;
+  color: var(--text-main);
+  padding: 0;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8), var(--gold-glow);
+}
+.phrase-dialog::backdrop { background: rgba(12, 1, 2, 0.85); backdrop-filter: blur(4px); }
+.phrase-dialog form { padding: 26px; display: grid; gap: 16px; overflow: auto; }
+.dialog-head { display: flex; justify-content: space-between; align-items: start; }
+.dialog-head h2 { font: normal 2.1rem Georgia, "Songti SC", serif; color: #fffbf2; margin: 0; }
+.icon-button { border: 0; background: transparent; color: var(--gold-bright); font-size: 2rem; cursor: pointer; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.all-plans-scroll-body { max-height: 75vh; overflow-y: auto; padding: 18px 24px 28px; display: grid; gap: 16px; }
+.all-plan-day-card {
+  background: linear-gradient(170deg, #380a0f 0%, #200305 100%);
+  border: 1px solid var(--gold-dim);
+  padding: 18px 20px;
+  border-left: 4px solid var(--gold-bright);
+}
+.all-plan-day-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.all-plan-day-head h3 { font: normal 1.3rem Georgia, "Songti SC", serif; color: var(--gold-bright); margin: 0; }
+.all-plan-city-badge { font-size: .68rem; font-weight: 800; letter-spacing: .12em; padding: 2px 7px; text-transform: uppercase; }
+.all-plan-city-badge.sin { background: rgba(212,175,55,0.2); color: var(--gold-bright); }
+.all-plan-city-badge.kul { background: rgba(184,27,36,0.3); color: #ffb4ba; }
+.all-plan-notes-box {
+  background: rgba(15, 2, 4, 0.7);
+  border: 1px dashed var(--gold-dim);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.all-plan-items-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.all-plan-items-list li { display: flex; align-items: baseline; gap: 10px; font-size: .92rem; color: var(--text-main); }
+.all-plan-items-list li.done { text-decoration: line-through; opacity: .5; color: var(--text-dim); }
+.all-plan-time { font-weight: 800; font-size: .8rem; color: var(--gold-bright); min-width: 40px; }
+
+/* Toast Bildirimi */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translate(-50%, 15px);
+  background: linear-gradient(180deg, #440d12 0%, #220306 100%);
+  border: 1px solid var(--gold-bright);
+  color: var(--text-gold);
+  padding: 13px 22px;
+  font-size: .88rem;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s, transform .2s;
+  z-index: 60;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), var(--gold-glow);
+}
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* ==========================================================================
+   MOBİL VE KÜÇÜK EKRAN UYUMLULUĞU
+   ========================================================================== */
+@media (max-width: 700px) {
+  .site-header { height: 62px; padding: 0 18px; }
+  .brand { font-size: 1.05rem; }
+  .city-toggle { font-size: .78rem; padding: 7px 11px; min-height: 38px; }
+  .home-hero { height: 350px; }
+  .home-hero-content { padding: 85px 20px 20px; }
+  .home-hero h1 { font-size: 3.4rem; }
+  .home-inner { padding: 0 18px 60px; }
+  .content-view { padding: 36px 18px 90px; }
+  .date-strip { justify-content: space-between; gap: 8px; font-size: .7rem; }
+  .date-strip span { display: block; }
+  .date-strip b { display: block; margin-top: 3px; }
+  .action-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .home-phrases { grid-template-columns: 1fr; }
+  .bottom-nav { height: calc(64px + env(safe-area-inset-bottom)); }
+  .bottom-nav button small { font-size: .66rem !important; }
+  .plan-day-banner { padding: 18px 16px; }
+  .plan-day-tools { width: 100%; justify-content: space-between; }
+  .plan-cal-popover { left: 10px; right: 10px; width: auto; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .notebook-head { flex-direction: column; align-items: flex-start; padding: 16px 18px; gap: 10px; }
+  .notebook-head-actions { width: 100%; justify-content: space-between; }
+  .notion-rendered-view { padding: 20px 18px; font-size: .96rem; line-height: 1.7; }
+  .notion-editor-wrapper { padding: 16px; }
+  .notion-editor-wrapper textarea { font-size: .94rem; min-height: 200px; }
+  .editor-bottom-bar { flex-direction: column; align-items: stretch; }
+  .editor-bottom-bar .primary-button { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 440px) {
+  .action-grid { grid-template-columns: 1fr !important; }
+}
