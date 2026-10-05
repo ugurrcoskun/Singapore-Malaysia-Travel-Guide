@@ -1,0 +1,717 @@
+{
+  "Hotel 81 Tristar": [
+    {
+      "lat": 1.3156884,
+      "lon": 103.8974205,
+      "name": "Hotel 81 (Tristar), 1, Onan Road, Geylang East, Eunos, Geylang, Central Region, Singapore, 424780, Singapore",
+      "category": "tourism",
+      "type": "hotel"
+    }
+  ],
+  "Peranakan Museum": [
+    {
+      "lat": 1.2942914,
+      "lon": 103.8491092,
+      "name": "Peranakan Museum, 39, Armenian Street, Bras Basah, Museum, Central Region, Singapore, 179941, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    }
+  ],
+  "Universal Studios Singapore": [
+    {
+      "lat": 1.254201,
+      "lon": 103.822667,
+      "name": "Universal Studios Singapore, 30, Sentosa Gateway, Sentosa, Southern Islands, Central Region, Singapore, 098140, Singapore",
+      "category": "tourism",
+      "type": "theme_park"
+    }
+  ],
+  "Madame Tussauds Singapore": [
+    {
+      "lat": 1.2540986,
+      "lon": 103.8177656,
+      "name": "Madame Tussauds Singapore, Imbiah Road, Sentosa, Fort Siloso, Southern Islands, Central Region, Singapore, 099003, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    }
+  ],
+  "National Museum of Singapore": [
+    {
+      "lat": 1.2965476,
+      "lon": 103.8483167,
+      "name": "National Museum of Singapore, 93, Stamford Road, Bras Basah, Museum, Central Region, Singapore, 178897, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    },
+    {
+      "lat": 1.297234,
+      "lon": 103.8488027,
+      "name": "National Museum of Singapore, Fort Canning Road, Bras Basah, Museum, Central Region, Singapore, 178903, Singapore",
+      "category": "information",
+      "type": "map"
+    },
+    {
+      "lat": 1.2965092,
+      "lon": 103.8479425,
+      "name": "National Museum of Singapore, Fort Canning Link, Bras Basah, Museum, Central Region, Singapore, 179493, Singapore",
+      "category": "information",
+      "type": "map"
+    }
+  ],
+  "ArtScience Museum": [
+    {
+      "lat": 1.2861382,
+      "lon": 103.8592297,
+      "name": "ArtScience Museum, 6, Bayfront Avenue, Bayfront, Civic District, Downtown Core, Central Region, Singapore, 018974, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    },
+    {
+      "lat": 1.2863674,
+      "lon": 103.8595009,
+      "name": "SweetSpot Cafe, 10, Bayfront Avenue, Bayfront, Civic District, Downtown Core, Central Region, Singapore, 018974, Singapore",
+      "category": "amenity",
+      "type": "cafe"
+    }
+  ],
+  "SkyPark Observation Deck": [
+    {
+      "lat": 1.2849182,
+      "lon": 103.861157,
+      "name": "SkyPark Observation Deck, Sheares Avenue, Bayfront Subzone, Civic District, Downtown Core, Central Region, Singapore, 018971, Singapore",
+      "category": "tourism",
+      "type": "viewpoint"
+    }
+  ],
+  "Cloud Forest": [
+    {
+      "lat": 1.2838777,
+      "lon": 103.8660342,
+      "name": "Cloud Forest, Gardens by the Bay, Marina South, Central Region, Singapore, 018593, Singapore",
+      "category": "building",
+      "type": "yes"
+    }
+  ],
+  "Flower Dome": [
+    {
+      "lat": 1.2845359,
+      "lon": 103.8647016,
+      "name": "Flower Dome, Gardens by the Bay, Marina South, Central Region, Singapore, 018593, Singapore",
+      "category": "building",
+      "type": "yes"
+    }
+  ],
+  "Singapore Zoo": [
+    {
+      "lat": 1.4037076,
+      "lon": 103.7940374,
+      "name": "Singapore Zoo, 80, Mandai Lake Road, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "tourism",
+      "type": "zoo"
+    },
+    {
+      "lat": 1.4045935,
+      "lon": 103.7907296,
+      "name": "Singapore Zoo, Entrance Plaza, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "tourism",
+      "type": "zoo"
+    },
+    {
+      "lat": 1.4045641,
+      "lon": 103.7893113,
+      "name": "Singapore Zoo, Mandai Lake Road, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "highway",
+      "type": "bus_stop"
+    }
+  ],
+  "River Wonders": [
+    {
+      "lat": 1.4020189,
+      "lon": 103.7916048,
+      "name": "River Wonders, 80, Mandai Lake Road, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "tourism",
+      "type": "zoo"
+    }
+  ],
+  "Night Safari": [
+    {
+      "lat": 1.4013531,
+      "lon": 103.7890019,
+      "name": "Night Safari, 80, Mandai Lake Road, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "tourism",
+      "type": "zoo"
+    },
+    {
+      "lat": 1.4037894,
+      "lon": 103.7891236,
+      "name": "Night Safari, Pangolin Trail, Central Water Catchment, Mandai Nature Precinct, Central Water Catchment, North Region, Singapore, 729826, Singapore",
+      "category": "shop",
+      "type": "ticket"
+    }
+  ],
+  "Singapore Flyer": [
+    {
+      "lat": 1.2894379,
+      "lon": 103.8632598,
+      "name": "Singapore Flyer, 30, Raffles Avenue, Marina Centre, Civic District, Downtown Core, Central Region, Singapore, 039803, Singapore",
+      "category": "building",
+      "type": "retail"
+    },
+    {
+      "lat": 1.2894104,
+      "lon": 103.8631253,
+      "name": "Singapore Flyer, Raffles Avenue, Marina Centre, Civic District, Downtown Core, Central Region, Singapore, 039799, Singapore",
+      "category": "tourism",
+      "type": "attraction;theme_park"
+    },
+    {
+      "lat": 1.2904651,
+      "lon": 103.8624787,
+      "name": "Singapore Flyer Car Park, Raffles Avenue, Marina Centre, Civic District, Downtown Core, Central Region, Singapore, 039799, Singapore",
+      "category": "amenity",
+      "type": "parking"
+    }
+  ],
+  "Lee Kong Chian Natural History Museum": [
+    {
+      "lat": 1.3014676,
+      "lon": 103.7735982,
+      "name": "Lee Kong Chian Natural History Museum, 2, Conservatory Drive, National University of Singapore, one-north, Queenstown, Central Region, Singapore, 117377, Singapore",
+      "category": "building",
+      "type": "yes"
+    },
+    {
+      "lat": 1.3014296,
+      "lon": 103.773624,
+      "name": "Lee Kong Chian Natural History Museum, 2, Conservatory Drive, National University of Singapore, one-north, Queenstown, Central Region, Singapore, 117377, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    }
+  ],
+  "Jewel Rain Vortex": [],
+  "Fort Siloso": [
+    {
+      "lat": 1.2587673,
+      "lon": 103.8087985,
+      "name": "Fort Siloso, Tunnel A, Sentosa, Fort Siloso, Southern Islands, Central Region, Singapore, 098970, Singapore",
+      "category": "historic",
+      "type": "fort"
+    },
+    {
+      "lat": 1.2589805,
+      "lon": 103.8086241,
+      "name": "Fort Siloso, Southern Islands, Central Region, Singapore, 098970, Singapore",
+      "category": "place",
+      "type": "quarter"
+    }
+  ],
+  "Henderson Waves": [
+    {
+      "lat": 1.2760507,
+      "lon": 103.8154142,
+      "name": "Henderson Waves, Henderson Waves Bridge, Telok Blangah Drive, Telok Blangah, Bukit Merah, Central Region, Singapore, 100059, Singapore",
+      "category": "tourism",
+      "type": "attraction"
+    }
+  ],
+  "Clarke Quay": [
+    {
+      "lat": 1.2882413,
+      "lon": 103.8464276,
+      "name": "Clarke Quay, 10, Eu Tong Sen Street, Singapore General Hospital, Singapore River, Central Region, Singapore, 059815, Singapore",
+      "category": "railway",
+      "type": "station"
+    },
+    {
+      "lat": 1.2887121,
+      "lon": 103.8468387,
+      "name": "Clarke Quay, Eu Tong Sen Street, Singapore General Hospital, Singapore River, Central Region, Singapore, 059389, Singapore",
+      "category": "railway",
+      "type": "stop"
+    },
+    {
+      "lat": 1.2895991,
+      "lon": 103.8445791,
+      "name": "Clarke Quay, Singapore River, Central Region, Singapore, 058282, Singapore",
+      "category": "place",
+      "type": "neighbourhood"
+    }
+  ],
+  "National Gallery Singapore": [
+    {
+      "lat": 1.2902557,
+      "lon": 103.8514709,
+      "name": "National Gallery Singapore, 1, Saint Andrew's Road, City Hall, Civic District, Downtown Core, Central Region, Singapore, 178957, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    }
+  ],
+  "Asian Civilisations Museum": [
+    {
+      "lat": 1.2874464,
+      "lon": 103.8514862,
+      "name": "Asian Civilisations Museum, 1, Empress Place, City Hall, Civic District, Downtown Core, Central Region, Singapore, 179555, Singapore",
+      "category": "tourism",
+      "type": "museum"
+    }
+  ],
+  "Koon Seng Road": [
+    {
+      "lat": 1.3103029,
+      "lon": 103.9025559,
+      "name": "Koon Seng Road, Geylang East, Joo Chiat, Geylang, Central Region, Singapore, 427539, Singapore",
+      "category": "highway",
+      "type": "residential"
+    },
+    {
+      "lat": 1.3117995,
+      "lon": 103.9041678,
+      "name": "Koon Seng Road, Geylang East, Joo Chiat, Geylang, Central Region, Singapore, 428106, Singapore",
+      "category": "highway",
+      "type": "residential"
+    },
+    {
+      "lat": 1.3129455,
+      "lon": 103.9061786,
+      "name": "Koon Seng Road, Geylang East, Joo Chiat, Geylang, Central Region, Singapore, 427944, Singapore",
+      "category": "highway",
+      "type": "residential"
+    }
+  ],
+  "Sri Veeramakaliamman Temple": [],
+  "Sultan Mosque": [
+    {
+      "lat": 1.3034335,
+      "lon": 103.8596966,
+      "name": "Before Sultan Mosque, North Bridge Road, Kampong Glam, Little India, Rochor, Central Region, Singapore, 198742, Singapore",
+      "category": "highway",
+      "type": "bus_stop"
+    },
+    {
+      "lat": 1.3019784,
+      "lon": 103.8592898,
+      "name": "Masjid Sultan (Sultan Mosque) information board, Bussorah Street, Kampong Glam, Little India, Rochor, Central Region, Singapore, 199474, Singapore",
+      "category": "tourism",
+      "type": "information"
+    }
+  ],
+  "Thian Hock Keng Temple": [
+    {
+      "lat": 1.2814175,
+      "lon": 103.8474477,
+      "name": "Thian Hock Keng Temple, Amoy Street, Chinatown, Tanjong Pagar, Outram, Central Region, Singapore, 069918, Singapore",
+      "category": "amenity",
+      "type": "taxi"
+    }
+  ],
+  "Buddha Tooth Relic Temple": [
+    {
+      "lat": 1.2815093,
+      "lon": 103.8441892,
+      "name": "Buddha Tooth Relic Temple, 288, South Bridge Road, Chinatown, Civic District, Outram, Central Region, Singapore, 058840, Singapore",
+      "category": "amenity",
+      "type": "place_of_worship"
+    }
+  ],
+  "Esplanade Theatres on the Bay": [
+    {
+      "lat": 1.2896438,
+      "lon": 103.8559542,
+      "name": "Esplanade Theatres on the Bay, 8, Raffles Avenue, Marina Centre, Civic District, Downtown Core, Central Region, Singapore, 039802, Singapore",
+      "category": "amenity",
+      "type": "theatre"
+    }
+  ],
+  "Marina City Tourist Hub": [],
+  "East Coast Park": [
+    {
+      "lat": 1.3049716,
+      "lon": 103.9270779,
+      "name": "East Coast Park, East Region, Singapore",
+      "category": "leisure",
+      "type": "park"
+    },
+    {
+      "lat": 1.3156155,
+      "lon": 103.967376,
+      "name": "East Coast Park (Zone H), Tampines, East Region, Singapore",
+      "category": "natural",
+      "type": "wood"
+    },
+    {
+      "lat": 1.2964851,
+      "lon": 103.8997339,
+      "name": "East Coast Park (Zone B), Central Region, Singapore, 449874, Singapore",
+      "category": "leisure",
+      "type": "park"
+    }
+  ],
+  "Supertree Grove": [
+    {
+      "lat": 1.2819993,
+      "lon": 103.8639356,
+      "name": "Supertree Grove, Marina South, Central Region, Singapore",
+      "category": "leisure",
+      "type": "garden"
+    },
+    {
+      "lat": 1.282394,
+      "lon": 103.8634541,
+      "name": "Supertree Grove, OCBC Skyway, Marina South, Central Region, Singapore, 018593, Singapore",
+      "category": "information",
+      "type": "board"
+    }
+  ],
+  "Gardens by the Bay": [
+    {
+      "lat": 1.2811486,
+      "lon": 103.86496,
+      "name": "Gardens by the Bay, Central Region, Singapore, 018593, Singapore",
+      "category": "leisure",
+      "type": "park"
+    },
+    {
+      "lat": 1.2791404,
+      "lon": 103.8679277,
+      "name": "Gardens by the Bay, 11, Marina Gardens Drive, Marina South, Central Region, Singapore, 019396, Singapore",
+      "category": "railway",
+      "type": "station"
+    },
+    {
+      "lat": 1.2813417,
+      "lon": 103.8658097,
+      "name": "Gardens by the Bay, Marina South, Central Region, Singapore, 018593, Singapore",
+      "category": "highway",
+      "type": "unclassified"
+    }
+  ],
+  "The Helix Bridge": [
+    {
+      "lat": 1.2875221,
+      "lon": 103.8606184,
+      "name": "Helix Bridge, The Helix, Bayfront Subzone, Civic District, Downtown Core, Central Region, Singapore, 018974, Singapore",
+      "category": "man_made",
+      "type": "bridge"
+    }
+  ],
+  "Merlion Park": [
+    {
+      "lat": 1.2856852,
+      "lon": 103.8541592,
+      "name": "Merlion Park, Civic District, Downtown Core, Central Region, Singapore",
+      "category": "leisure",
+      "type": "park"
+    },
+    {
+      "lat": 1.2869646,
+      "lon": 103.8544639,
+      "name": "Merlion Park, Clifford Pier, Civic District, Downtown Core, Central Region, Singapore, 049215, Singapore",
+      "category": "highway",
+      "type": "pedestrian"
+    }
+  ],
+  "Fort Canning Park": [
+    {
+      "lat": 1.2940165,
+      "lon": 103.8460084,
+      "name": "Fort Canning Park, Central Region, Singapore",
+      "category": "leisure",
+      "type": "park"
+    }
+  ],
+  "Sri Mariamman Temple": [
+    {
+      "lat": 1.2826842,
+      "lon": 103.845194,
+      "name": "Sri Mariamman Temple, 244, South Bridge Road, Chinatown, Tanjong Pagar, Outram, Central Region, Singapore, 058793, Singapore",
+      "category": "amenity",
+      "type": "place_of_worship"
+    }
+  ],
+  "Singapore Botanic Gardens": [
+    {
+      "lat": 1.3146321,
+      "lon": 103.8156151,
+      "name": "Singapore Botanic Gardens, 1, Central Region, Singapore, 259569, Singapore",
+      "category": "leisure",
+      "type": "park"
+    }
+  ],
+  "Marina Bay Sands": [
+    {
+      "lat": 1.2836965,
+      "lon": 103.8607226,
+      "name": "Marina Bay Sands, 10, Bayfront Avenue, Bayfront Subzone, Civic District, Downtown Core, Central Region, Singapore, 018956, Singapore",
+      "category": "tourism",
+      "type": "hotel"
+    },
+    {
+      "lat": 1.2856301,
+      "lon": 103.8610186,
+      "name": "Marina Bay Sands, Bayfront Avenue, Bayfront, Civic District, Downtown Core, Central Region, Singapore, 018971, Singapore",
+      "category": "amenity",
+      "type": "parking"
+    }
+  ],
+  "BreadTalk Chinatown Point": [],
+  "KINEX": [
+    {
+      "lat": 1.3148376,
+      "lon": 103.8946898,
+      "name": "Kinex, 11, Tanjong Katong Road, Geylang East, Joo Chiat, Geylang, Central Region, Singapore, 437157, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.3147168,
+      "lon": 103.8943086,
+      "name": "Kinex, Tanjong Katong Road, Geylang East, Joo Chiat, Geylang, Central Region, Singapore, 437157, Singapore",
+      "category": "amenity",
+      "type": "taxi"
+    }
+  ],
+  "Joo Chiat Complex": [
+    {
+      "lat": 1.315942,
+      "lon": 103.8983885,
+      "name": "Joo Chiat Complex, 1, Joo Chiat Road, Geylang East, Eunos, Geylang, Central Region, Singapore, 420001, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.3163503,
+      "lon": 103.8989488,
+      "name": "Joo Chiat Complex, Changi Road, Geylang East, Eunos, Geylang, Central Region, Singapore, 419701, Singapore",
+      "category": "highway",
+      "type": "bus_stop"
+    },
+    {
+      "lat": 1.316023,
+      "lon": 103.898231,
+      "name": "UOB, 2, Joo Chiat Road, Geylang East, Eunos, Geylang, Central Region, Singapore, 420002, Singapore",
+      "category": "amenity",
+      "type": "atm"
+    }
+  ],
+  "FairPrice Joo Chiat Complex": [],
+  "DAISO SingPost Centre": [],
+  "Haig Road Market and Food Centre": [],
+  "Kedai Kopi Haig Road": [],
+  "Geylang Serai Market and Food Centre": [],
+  "VivoCity": [
+    {
+      "lat": 1.2643707,
+      "lon": 103.8229537,
+      "name": "VivoCity, 1, Harbourfront Avenue, Maritime Square, HarbourFront, Bukit Merah, Central Region, Singapore, 098585, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.265099,
+      "lon": 103.8223324,
+      "name": "VivoCity, Telok Blangah Road, Maritime Square, HarbourFront, Bukit Merah, Central Region, Singapore, 098585, Singapore",
+      "category": "railway",
+      "type": "station"
+    },
+    {
+      "lat": 1.2650806,
+      "lon": 103.8223037,
+      "name": "VivoCity, Telok Blangah Road, Maritime Square, HarbourFront, Bukit Merah, Central Region, Singapore, 098585, Singapore",
+      "category": "railway",
+      "type": "stop"
+    }
+  ],
+  "Design Orchard": [
+    {
+      "lat": 1.3020924,
+      "lon": 103.8379315,
+      "name": "Design Orchard, 250, Orchard Road, Somerset, Orchard, Central Region, Singapore, 238905, Singapore",
+      "category": "shop",
+      "type": "mall"
+    }
+  ],
+  "ION Orchard": [
+    {
+      "lat": 1.3039479,
+      "lon": 103.8319051,
+      "name": "ION Orchard, 2, Orchard Turn, Boulevard, Orchard, Central Region, Singapore, 238801, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.304324,
+      "lon": 103.8316677,
+      "name": "Orchard Road Post Office, 2, Orchard Turn, Boulevard, Orchard, Central Region, Singapore, 238801, Singapore",
+      "category": "amenity",
+      "type": "post_office"
+    }
+  ],
+  "Mustafa Centre": [
+    {
+      "lat": 1.3101174,
+      "lon": 103.8553229,
+      "name": "Mustafa Centre, Syed Alwi Road, Lavender, Little India, Kallang, Central Region, Singapore, 207695, Singapore",
+      "category": "shop",
+      "type": "department_store"
+    },
+    {
+      "lat": 1.3101243,
+      "lon": 103.8553164,
+      "name": "Mustafa Centre, 145, Syed Alwi Road, Lavender, Little India, Kallang, Central Region, Singapore, 207695, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.3090727,
+      "lon": 103.8564991,
+      "name": "Mustafa Centre, 171, Syed Alwi Road, Lavender, Little India, Kallang, Central Region, Singapore, 209627, Singapore",
+      "category": "shop",
+      "type": "mall"
+    }
+  ],
+  "Bugis Street": [
+    {
+      "lat": 1.2993775,
+      "lon": 103.8557874,
+      "name": "Bugis Street, Bugis, Civic District, Downtown Core, Central Region, Singapore, 188024, Singapore",
+      "category": "highway",
+      "type": "pedestrian"
+    },
+    {
+      "lat": 1.2996312,
+      "lon": 103.8555648,
+      "name": "Bugis Street, Bugis, Civic District, Downtown Core, Central Region, Singapore, 188021, Singapore",
+      "category": "highway",
+      "type": "pedestrian"
+    },
+    {
+      "lat": 1.2992004,
+      "lon": 103.8559889,
+      "name": "Bugis Street, Bugis, Civic District, Downtown Core, Central Region, Singapore, 188139, Singapore",
+      "category": "highway",
+      "type": "service"
+    }
+  ],
+  "Haji Lane": [
+    {
+      "lat": 1.3012268,
+      "lon": 103.8587337,
+      "name": "Haji Lane, Kampong Glam, Little India, Rochor, Central Region, Singapore, 189248, Singapore",
+      "category": "highway",
+      "type": "living_street"
+    },
+    {
+      "lat": 1.3003978,
+      "lon": 103.8593863,
+      "name": "Haji Lane, Kampong Glam, Little India, Rochor, Central Region, Singapore, 189204, Singapore",
+      "category": "highway",
+      "type": "living_street"
+    },
+    {
+      "lat": 1.3015475,
+      "lon": 103.858471,
+      "name": "Haji lane, Haji Lane, Kampong Glam, Little India, Rochor, Central Region, Singapore, 189248, Singapore",
+      "category": "tourism",
+      "type": "attraction"
+    }
+  ],
+  "Newton Food Centre": [
+    {
+      "lat": 1.312079,
+      "lon": 103.8392877,
+      "name": "Newton Food Centre, 500, Clemenceau Avenue North, Newton Circus, Newton, Central Region, Singapore, 229495, Singapore",
+      "category": "amenity",
+      "type": "food_court"
+    },
+    {
+      "lat": 1.3120477,
+      "lon": 103.8403032,
+      "name": "Newton Food Centre, Bukit Timah Road, Newton Circus, Newton, Central Region, Singapore, 229495, Singapore",
+      "category": "highway",
+      "type": "bus_stop"
+    }
+  ],
+  "Lau Pa Sat": [
+    {
+      "lat": 1.2806167,
+      "lon": 103.8504802,
+      "name": "Lau Pa Sat, 18, Raffles Quay, Cecil, Civic District, Downtown Core, Central Region, Singapore, 048582, Singapore",
+      "category": "amenity",
+      "type": "food_court"
+    },
+    {
+      "lat": 1.280616,
+      "lon": 103.8505047,
+      "name": "Lau Pa Sat, Raffles Quay, Cecil, Civic District, Downtown Core, Central Region, Singapore, 048582, Singapore",
+      "category": "amenity",
+      "type": "restaurant"
+    },
+    {
+      "lat": 1.2804121,
+      "lon": 103.8508078,
+      "name": "Lau Pa Sat, Raffles Quay, Cecil, Civic District, Downtown Core, Central Region, Singapore, 048582, Singapore",
+      "category": "amenity",
+      "type": "taxi"
+    }
+  ],
+  "Old Airport Road Food Centre": [
+    {
+      "lat": 1.3082727,
+      "lon": 103.8858564,
+      "name": "Old Airport Road Food Centre, 51, Old Airport Road, Aljunied, Geylang, Central Region, Singapore, 390051, Singapore",
+      "category": "amenity",
+      "type": "food_court"
+    }
+  ],
+  "East Coast Lagoon Food Village": [
+    {
+      "lat": 1.3069495,
+      "lon": 103.9349429,
+      "name": "East Coast Lagoon Food Village, Bedok South, Bedok, East Region, Singapore, 468960, Singapore",
+      "category": "landuse",
+      "type": "retail"
+    }
+  ],
+  "Tiong Bahru Market": [
+    {
+      "lat": 1.2847924,
+      "lon": 103.832551,
+      "name": "Tiong Bahru Market, 30, Seng Poh Road, Tiong Bahru, Bukit Merah, Central Region, Singapore, 168898, Singapore",
+      "category": "amenity",
+      "type": "marketplace"
+    },
+    {
+      "lat": 1.2852317,
+      "lon": 103.8323396,
+      "name": "Tiong Bahru Market, Lim Liak Street, Tiong Bahru, Telok Blangah, Bukit Merah, Central Region, Singapore, 168898, Singapore",
+      "category": "amenity",
+      "type": "taxi"
+    }
+  ],
+  "Tekka Centre": [
+    {
+      "lat": 1.3061912,
+      "lon": 103.8506146,
+      "name": "Tekka Centre, 665, Buffalo Road, Farrer Park, Little India, Rochor, Central Region, Singapore, 210665, Singapore",
+      "category": "shop",
+      "type": "mall"
+    },
+    {
+      "lat": 1.305589,
+      "lon": 103.8511242,
+      "name": "Tekka Centre, Serangoon Road, Farrer Park, Little India, Rochor, Central Region, Singapore, 210663, Singapore",
+      "category": "highway",
+      "type": "bus_stop"
+    }
+  ],
+  "Maxwell Food Centre": [],
+  "Chinatown Complex": [
+    {
+      "lat": 1.2822688,
+      "lon": 103.8431494,
+      "name": "Chinatown Complex, 335, Smith Street, Chinatown, Tanjong Pagar, Outram, Central Region, Singapore, 050335, Singapore",
+      "category": "building",
+      "type": "commercial"
+    }
+  ]
+}
