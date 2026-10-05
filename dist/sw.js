@@ -1,6 +1,6 @@
-const CACHE = 'asya-cep-v12';
+const CACHE = 'asya-cep-v13';
 const CORE = [
-  './', './index.html', './style.css', './app.js', './phrases.js',
+  './', './index.html', './style.css', './app.js', './plan.js', './phrases.js',
   './pronunciations.js', './places.js', './map.js',
   './vendor/leaflet.js', './vendor/leaflet.css',
   './assets/chinatown-evening.webp', './assets/kuala-lumpur-evening.webp',

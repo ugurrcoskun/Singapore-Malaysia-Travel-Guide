@@ -17,6 +17,7 @@
   <script src="./places.js" defer></script>
   <script src="./app.js" defer></script>
   <script src="./map.js" defer></script>
+  <script src="./plan.js" defer></script>
 </head>
 <body>
   <div id="intro" class="intro" aria-label="Asya Cep Rehberi açılışı">
@@ -44,17 +45,157 @@
           <div class="home-hero-content"><p id="home-edition" class="hero-meta">03—08 EKİM / SİNGAPUR</p><h1 id="home-title">Singapur</h1><p id="home-subtitle">Harita, hazır cümleler ve çeviri.</p></div>
         </div>
         <div class="home-inner">
-          <div class="date-strip"><span>03—08 EKİM <b>Singapur</b></span><span>09—14 EKİM <b>Kuala Lumpur</b></span></div>
+          <div class="date-strip"><span data-go="plan">03—08 EKİM <b>Singapur</b></span><span data-go="plan">09—14 EKİM <b>Kuala Lumpur</b></span></div>
           <section class="home-section" aria-labelledby="quick-home-title">
             <div class="section-head"><div><p class="eyebrow">HIZLI ERİŞİM</p><h2 id="quick-home-title">Şu an ne lazım?</h2></div></div>
             <div class="action-grid">
+              <button class="action-tile" type="button" data-go="plan"><span class="action-symbol" aria-hidden="true">日</span><strong>Günlük plan</strong><small>Takvim, rota & notların</small></button>
               <button class="action-tile" type="button" data-go="phrases"><span class="action-symbol" aria-hidden="true">文</span><strong>Hazır cümleler</strong><small>Bul, göster, dinlet</small></button>
               <button class="action-tile" type="button" data-go="translate"><span class="action-symbol" aria-hidden="true">⇄</span><strong>Serbest çeviri</strong><small>Burada çevir ve dinlet</small></button>
               <button class="action-tile" type="button" data-go="lists"><span class="action-symbol" aria-hidden="true">◎</span><strong>Gezi haritası</strong><small>Gezdiklerini işaretle</small></button>
             </div>
           </section>
+
+          <section class="home-section" aria-labelledby="home-plan-title">
+            <div class="section-head">
+              <div><p class="eyebrow">SEYAHAT AJANDASI</p><h2 id="home-plan-title">Günün planı & notları</h2></div>
+              <button class="text-link" type="button" data-go="plan">Ajandayı aç</button>
+            </div>
+            <div id="home-plan-summary"></div>
+          </section>
+
           <section class="home-section" aria-labelledby="say-now-title"><div class="section-head"><div><p class="eyebrow">CEBİNDEKİ CÜMLELER</p><h2 id="say-now-title">Hemen söyle</h2></div><button class="text-link" type="button" data-go="phrases">Tümünü gör</button></div><div id="home-phrases" class="home-phrases"></div></section>
           <p class="home-note">İpucu: Cümle kartındaki <span aria-hidden="true">▶</span> düğmesine basıp telefonu karşındakine uzatabilirsin.</p>
+        </div>
+      </section>
+
+      <section id="view-plan" class="view content-view plan-view" aria-labelledby="plan-title" hidden>
+        <div class="view-heading compact">
+          <p class="eyebrow">SEYAHAT AJANDASI & TAKVİM</p>
+          <h1 id="plan-title">Günlük Plan</h1>
+          <p>Her gün için yapılacakları listele, rotanı oluştur, gezi notlarını ve bilet detaylarını kaydet.</p>
+        </div>
+
+        <!-- Seyahat Takvimi ve Gün Seçici -->
+        <div class="plan-calendar-card">
+          <div class="plan-calendar-header">
+            <div class="plan-date-nav">
+              <button id="plan-prev-day" class="icon-nav-btn" type="button" aria-label="Önceki gün">‹</button>
+              <button id="plan-today-btn" class="today-tag-btn" type="button">Bugün</button>
+              <button id="plan-next-day" class="icon-nav-btn" type="button" aria-label="Sonraki gün">›</button>
+            </div>
+            <div class="plan-cal-actions">
+              <button id="plan-open-calendar-btn" class="plan-tool-btn" type="button" aria-label="Aylık takvimi aç">
+                <span aria-hidden="true">📅</span> Takvim
+              </button>
+              <button id="plan-view-all-btn" class="plan-tool-btn" type="button" aria-label="Tüm günleri gör">
+                <span aria-hidden="true">📑</span> Tüm Planlar
+              </button>
+            </div>
+          </div>
+
+          <!-- Açılır Mini Takvim Popover -->
+          <div id="plan-cal-popover" class="plan-cal-popover" hidden>
+            <div class="plan-cal-popover-head">
+              <button id="plan-cal-prev-month" type="button" class="icon-btn">‹</button>
+              <strong id="plan-cal-month-title">Ekim 2026</strong>
+              <button id="plan-cal-next-month" type="button" class="icon-btn">›</button>
+              <button id="plan-cal-close-btn" type="button" class="icon-btn close-x">×</button>
+            </div>
+            <div class="plan-cal-weekdays">
+              <span>Pt</span><span>Sa</span><span>Ça</span><span>Pe</span><span>Cu</span><span>Ct</span><span>Pz</span>
+            </div>
+            <div id="plan-cal-days-grid" class="plan-cal-days-grid"></div>
+          </div>
+
+          <!-- 12 Günlük Yatay Kaydırılabilir Hızlı Gün Şeridi -->
+          <div id="plan-trip-bar" class="plan-trip-bar" role="group" aria-label="Seyahat günleri"></div>
+        </div>
+
+        <!-- Seçili Gün Kartı & Araç Çubuğu -->
+        <div class="plan-day-banner">
+          <div class="plan-day-info">
+            <span id="plan-selected-badge" class="plan-city-pill">Singapur · 1. Gün</span>
+            <h2 id="plan-selected-heading">03 EKİM 2026, CUMARTESİ</h2>
+            <p id="plan-selected-stats" class="plan-stats-text">0 plan · 0 tamamlandı</p>
+          </div>
+          <div class="plan-day-tools">
+            <select id="plan-day-city" class="plan-city-select" aria-label="Şehir seçimi">
+              <option value="Singapur">Singapur</option>
+              <option value="Kuala Lumpur">Kuala Lumpur</option>
+            </select>
+            <button id="plan-copy-day-btn" class="plan-action-chip" type="button" title="Planı kopyala"><span aria-hidden="true">📋</span> Kopyala</button>
+            <button id="plan-clear-day-btn" class="plan-action-chip danger" type="button" title="Günü temizle"><span aria-hidden="true">🗑️</span> Temizle</button>
+          </div>
+        </div>
+
+        <!-- Günün Not Defteri Alanı (Notion Stili Zengin Görünüm) -->
+        <div class="plan-notebook-card" id="plan-notebook-card">
+          <div class="notebook-head">
+            <div class="notebook-title">
+              <span class="seal-small">記</span>
+              <div>
+                <h3>Günün Not Defteri</h3>
+                <small>AI planları, rezervasyonlar, kalın yazılar ve listeler için Notion stili defter</small>
+              </div>
+            </div>
+            <div class="notebook-head-actions">
+              <span id="plan-notes-saved" class="notes-saved-tag" aria-live="polite"></span>
+              <div class="notion-view-toggle" role="tablist">
+                <button type="button" id="notion-toggle-preview" class="notion-tab-btn active" role="tab" aria-selected="true" title="Notion Görünümü">
+                  <span aria-hidden="true">👁️</span> Okuma
+                </button>
+                <button type="button" id="notion-toggle-edit" class="notion-tab-btn" role="tab" aria-selected="false" title="Metni Düzenle / Yapıştır">
+                  <span aria-hidden="true">✎</span> Düzenle
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Düzenleme Araç Çubuğu (Toolbar) -->
+          <div id="notion-editor-toolbar" class="notion-toolbar" hidden>
+            <button type="button" class="toolbar-btn" data-fmt="bold" title="Kalın metin (**metin**)"><b>B</b> Kalın</button>
+            <button type="button" class="toolbar-btn" data-fmt="h2" title="Başlık (## Başlık)">H2 Başlık</button>
+            <button type="button" class="toolbar-btn" data-fmt="list" title="Madde Listesi (- madde)">• Liste</button>
+            <button type="button" class="toolbar-btn" data-fmt="numlist" title="Numaralı Liste (1. madde)">1. Liste</button>
+            <button type="button" class="toolbar-btn" data-fmt="callout" title="İpucu / Önemli Kutusu (> İpucu)">💡 İpucu</button>
+            <button type="button" class="toolbar-btn paste-btn" id="notion-paste-btn" title="Panodaki metni yapıştır">📋 Yapıştır</button>
+          </div>
+
+          <div class="notebook-paper">
+            <!-- 1. Notion Tarzı Zengin Önizleme Alanı -->
+            <div id="plan-notes-preview" class="notion-rendered-view" aria-label="Notion formatlı seyahat notları">
+              <!-- JS ile parse edilen Markdown / zengin içerik buraya gelecek -->
+            </div>
+
+            <!-- 2. Düzenleme Metin Alanı (Markdown / Metin girişi) -->
+            <div id="plan-notes-edit-wrapper" class="notion-editor-wrapper" hidden>
+              <textarea id="plan-day-notes" rows="9" placeholder="AI'dan aldığın gezi planını buraya doğrudan yapıştırabilirsin...&#10;&#10;Örnek:&#10;## Sabah: Chinatown Keşfi&#10;- **09:30** Sri Mariamman Tapınağı&#10;- **11:00** Maxwell Food Centre'da Tian Tian Chicken Rice&#10;> 💡 İpucu: Yanına mutlaka küçük şemsiye al!" aria-label="Günün notları metin alanı"></textarea>
+              <div class="editor-bottom-bar">
+                <span class="editor-hint">💡 **kalın**, # başlık, - liste, > ipucu ve saatleri destekler. Yapıştırdığında Notion gibi görünür.</span>
+                <button type="button" id="notion-done-editing-btn" class="primary-button small">✓ Tamamla & Önizle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Günlük Rota & Yapılacaklar Listesi -->
+        <div class="plan-items-section">
+          <div class="plan-items-header">
+            <div>
+              <h3>Günün Rotası & Aktiviteleri</h3>
+              <small>Saatli veya sırasız yapılacaklar</small>
+            </div>
+            <button id="plan-add-item-btn" class="primary-button small" type="button">+ Plan Ekle</button>
+          </div>
+
+          <div id="plan-items-list" class="plan-items-list" aria-live="polite"></div>
+
+          <div id="plan-items-empty" class="empty-state compact" hidden>
+            <span aria-hidden="true">✍️</span>
+            <h3>Henüz plan eklenmedi</h3>
+            <p>Bu güne gezilecek yer, yemek molası veya ulaşım planı eklemek için yukarıdaki düğmeye dokun.</p>
+          </div>
         </div>
       </section>
 
@@ -82,8 +223,70 @@
       </section>
     </main>
 
-    <nav class="bottom-nav" aria-label="Ana gezinme"><button type="button" data-go="home" aria-label="Ana sayfa"><span aria-hidden="true">⌂</span><small>Ana sayfa</small></button><button type="button" data-go="phrases" aria-label="Cümleler"><span aria-hidden="true">文</span><small>Cümleler</small></button><button type="button" data-go="lists" aria-label="Harita"><span aria-hidden="true">◎</span><small>Harita</small></button><button type="button" data-go="translate" aria-label="Çeviri"><span aria-hidden="true">⇄</span><small>Çeviri</small></button></nav>
+    <nav class="bottom-nav" aria-label="Ana gezinme">
+      <button type="button" data-go="home" aria-label="Ana sayfa"><span aria-hidden="true">⌂</span><small>Ana sayfa</small></button>
+      <button type="button" data-go="plan" aria-label="Günlük plan"><span aria-hidden="true">日</span><small>Planım</small></button>
+      <button type="button" data-go="phrases" aria-label="Cümleler"><span aria-hidden="true">文</span><small>Cümleler</small></button>
+      <button type="button" data-go="lists" aria-label="Harita"><span aria-hidden="true">◎</span><small>Harita</small></button>
+      <button type="button" data-go="translate" aria-label="Çeviri"><span aria-hidden="true">⇄</span><small>Çeviri</small></button>
+    </nav>
   </div>
+
+  <!-- Yeni Plan Ekleme Dialogu -->
+  <dialog id="plan-item-dialog" class="phrase-dialog plan-item-dialog">
+    <form id="plan-item-form" method="dialog">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">YENİ AKTİVİTE</p>
+          <h2>Plan Ekle</h2>
+        </div>
+        <button id="close-plan-dialog" class="icon-button" type="button" aria-label="Kapat">×</button>
+      </div>
+
+      <div class="form-row-2">
+        <label>
+          Saat (İsteğe bağlı)
+          <input name="time" type="time" placeholder="09:30">
+        </label>
+        <label>
+          Kategori
+          <select name="category" class="styled-select">
+            <option value="gezi">🏛️ Gezi & Keşif</option>
+            <option value="yeme">🍜 Yeme & İçme</option>
+            <option value="ulasim">🚇 Ulaşım & Transfer</option>
+            <option value="otel">🏨 Otel & Dinlenme</option>
+            <option value="alisveris">🛍️ Alışveriş</option>
+            <option value="onemli">⭐ Önemli & Hatırlatma</option>
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Ne yapacaksın? (Başlık / Yer)
+        <input name="title" required list="plan-places-datalist" placeholder="Örn: Gardens by the Bay veya Akşam yemeği" maxlength="120" autocomplete="off">
+        <datalist id="plan-places-datalist"></datalist>
+      </label>
+
+      <label>
+        Not veya Açıklama (İsteğe bağlı)
+        <input name="note" placeholder="Örn: Biletler telefonda hazır, rezervasyon no: 1234" maxlength="200">
+      </label>
+
+      <button class="primary-button" type="submit">Plana Kaydet</button>
+    </form>
+  </dialog>
+
+  <!-- Tüm 12 Günün Seyahat Özeti Dialogu -->
+  <dialog id="all-plans-dialog" class="phrase-dialog all-plans-dialog">
+    <div class="dialog-head" style="padding: 20px 24px 0;">
+      <div>
+        <p class="eyebrow">TÜM SEYAHAT PLANI</p>
+        <h2>12 Günlük Ajanda Özeti</h2>
+      </div>
+      <button id="close-all-plans-dialog" class="icon-button" type="button" aria-label="Kapat">×</button>
+    </div>
+    <div id="all-plans-content" class="all-plans-scroll-body"></div>
+  </dialog>
 
   <dialog id="phrase-dialog" class="phrase-dialog"><form id="custom-phrase-form" method="dialog"><div class="dialog-head"><div><p class="eyebrow">KENDİ CÜMLEN</p><h2>Cümle ekle</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Kapat">×</button></div><label>Türkçe cümle<input name="tr" required maxlength="160" placeholder="Örneğin: Bilet nereden alınır?"></label><label>Mandarin çevirisi<input name="zh" maxlength="160" placeholder="İstersen yaz"></label><label>İngilizce çevirisi<input name="en" maxlength="160" placeholder="İstersen yaz"></label><label>Malayca çevirisi<input name="ms" maxlength="160" placeholder="İstersen yaz"></label><p>Çevirileri bu cihazda saklanır. Çeviri otomatik yapılmaz.</p><button class="primary-button" type="submit">Cümleyi kaydet</button></form></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

@@ -13,12 +13,14 @@
   const allPhrases=()=>[...phrases,...custom];
   const persist=()=>{localStorage.setItem('asya-favorites',JSON.stringify(favorites));localStorage.setItem('asya-custom-phrases',JSON.stringify(custom));localStorage.setItem('asya-lang',lang);localStorage.setItem('asya-city',city)};
   const toast=message=>{const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2600)};
-  const changeView=next=>{view=next;$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='phrases')$('#phrase-search').focus({preventScroll:true});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate())};
+  window.TravelAppToast=toast;
+  const changeView=next=>{view=next;$$('.view').forEach(el=>el.hidden=el.id!==`view-${next}`);$$('[data-go]').forEach(el=>el.classList.toggle('active',el.dataset.go===next));$$('.bottom-nav button').forEach(el=>el.setAttribute('aria-current',el.dataset.go===next?'page':'false'));window.scrollTo({top:0,behavior:'instant'});if(next==='phrases')$('#phrase-search').focus({preventScroll:true});if(next==='lists')requestAnimationFrame(()=>window.TravelMap?.activate());if(next==='home')window.TravelPlan?.renderHomePlanCard?.()};
+  window.TravelChangeView=changeView;
   const enter=()=>{$('#intro').hidden=true;$('#app').hidden=false;sessionStorage.setItem('asya-entered','1');changeView('home')};
   $('#enter-app').addEventListener('click',enter);
   if(sessionStorage.getItem('asya-entered')==='1')enter();
   $('#logo-home').addEventListener('click',()=>changeView('home'));
-  $$('[data-go]').forEach(button=>button.addEventListener('click',()=>changeView(button.dataset.go)));
+  document.addEventListener('click',e=>{const btn=e.target.closest('[data-go]');if(btn&&btn.dataset.go)changeView(btn.dataset.go)});
   function updateCity(){const kl=city==='Kuala Lumpur';$('#city-name').textContent=city;$('#language-select').value=lang;$('#translate-lang').value=lang==='zh'?'zh-CN':lang;$('#home-hero-image').classList.toggle('kl',kl);$('#home-hero-image').setAttribute('aria-label',kl?'Akşam ışığında Kuala Lumpur Chinatown sokakları':'Akşam ışığında Singapur Chinatown sokakları');$('#home-edition').textContent=kl?'09—14 EKİM / KUALA LUMPUR':'03—08 EKİM / SİNGAPUR';$('#home-title').textContent=city;$('#home-subtitle').textContent=kl?'Hazır cümleler ve çeviri.':'Harita, hazır cümleler ve çeviri.';$('#translation-tip-text').textContent=kl?'Kuala Lumpur’da Malayca ve İngilizce yaygın. Çince konuşan biriyle Mandarin’i de seçebilirsin.':"Karşındaki kişi İngilizceyi anlamıyorsa önce Mandarin'i dene. Singapur'da Malayca ve Tamilce de konuşuluyor."}
   $('#city-toggle').addEventListener('click',()=>{city=city==='Singapur'?'Kuala Lumpur':'Singapur';lang=city==='Singapur'?'zh':'ms';updateCity();persist();renderAll();toast(`${city} seçildi`)});
   updateCity();
